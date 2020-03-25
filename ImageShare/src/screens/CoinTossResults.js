@@ -5,14 +5,17 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 function CoinTossResults(props) {
   return (
     <View style={styles.container}>
+
       <View style={styles.headsRow}>
-        <Text style={styles.heads}>Heads</Text>
-        <Text style={styles.tails}>Tails</Text>
+        <Text style={styles.heads}> Heads </Text>
+        <Text style={styles.tails}> Tails </Text>
       </View>
+
       <View style={styles.rectHeadsRow}>
         <View style={styles.rectHeads}></View>
         <View style={styles.rectTails}></View>
       </View>
+
       <View style={styles.ctrButtonStack}>
         <CupertinoButtonDanger
           text1="Play Again"
@@ -24,11 +27,16 @@ function CoinTossResults(props) {
           style={styles.ctRonClick}
         ></TouchableOpacity>
       </View>
+
       <View style={styles.rect2}>
         <Text style={styles.htResults}>
-          The results are:{"\n"} {"\n"} 50% Heads{"\n"} 50% Tails
+          The results are:
+          {"\n"} 
+          {"\n"} 50% Heads
+          {"\n"} 50% Tails
         </Text>
       </View>
+
     </View>
   );
 }
@@ -113,9 +121,10 @@ const styles = StyleSheet.create({
   ctrButtonStack: {
     width: 216,
     height: 52,
-    marginTop: 392,
-    marginLeft: 72
+    marginTop: 400,
+    marginLeft: 90
   },
+
   rect2: {
     width: 259,
     height: 186,
@@ -129,14 +138,15 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
-    marginTop: -327,
-    marginLeft: 54
+    marginTop: -375,
+    marginLeft: 65
   },
+
   htResults: {
     color: "rgba(66,66,66,1)",
     fontSize: 26,
     fontFamily: "roboto-regular",
-    marginTop: 38,
+    marginTop: 30,
     marginLeft: 33
   }
 });

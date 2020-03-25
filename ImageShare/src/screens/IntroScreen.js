@@ -5,6 +5,7 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 function IntroScreen(props) {
   return (
     <View style={styles.container}>
+
       <View style={styles.introSButtonStack}>
         <CupertinoButtonDanger
           text1="Spinner"
@@ -16,6 +17,7 @@ function IntroScreen(props) {
           style={styles.isBonClick}
         ></TouchableOpacity>
       </View>
+
       <View style={styles.ictButtonStack}>
         <CupertinoButtonDanger
           text1="Coin Toss"
@@ -27,27 +29,48 @@ function IntroScreen(props) {
           style={styles.ictBonClick}
         ></TouchableOpacity>
       </View>
+
       <View style={styles.rect1}>
-        <Text style={styles.probabilitySimulator}>Probability Simulator</Text>
+
+        <Text style={styles.probabilitySimulator}>
+          Probability Simulator
+        </Text>
+
         <Text style={styles.nlvm}>
           National Library of Virtual Manipulatives
         </Text>
+
         <Text style={styles.loremIpsum}>
           Welcome to our probability simulator{"\n"}
-          {"\n"}The purpose of this app is to help {"\n"}visualize the power of
-          probability.
+          {"\n"}The purpose of this app is to help 
+          {"\n"}students visualize how probability 
+          {"\n"}works in different scenarios. 
+          {"\n"}
+          {"\n"}
+          {"\n"}Software Developers:
+          {"\n"}Bhusan Paudel
+          {"\n"}Elwin Jaramillo
+          {"\n"}Rodolfo Soto 
+
         </Text>
-        <Text style={styles.chooseGame}>Choose a game to begin:</Text>
+
+        <Text style={styles.chooseGame}>
+          Choose a game to begin:
+          </Text>
+
       </View>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: "rgba(190,207,223,1)"
   },
+
   introSButton: {
     top: 0,
     left: 0,
@@ -63,6 +86,7 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45
   },
+
   isBonClick: {
     top: 0,
     left: 3,
@@ -78,12 +102,14 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45
   },
+
   introSButtonStack: {
     width: 212,
     height: 52,
     marginTop: 568,
-    marginLeft: 74
+    marginLeft: 90
   },
+
   ictButton: {
     top: 0,
     left: 0,
@@ -99,6 +125,7 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45
   },
+
   ictBonClick: {
     top: 0,
     left: 3,
@@ -110,14 +137,16 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderWidth: 0
   },
+
   ictButtonStack: {
     width: 212,
     height: 52,
     marginTop: -142,
-    marginLeft: 74
+    marginLeft: 90
   },
+
   rect1: {
-    width: 306,
+    width: 315,
     height: 370,
     backgroundColor: "rgba(239,221,205,1)",
     borderRadius: 33,
@@ -130,25 +159,28 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
     marginTop: -496,
-    marginLeft: 25
+    marginLeft: 40
   },
+
   probabilitySimulator: {
     color: "rgba(66,66,66,1)",
     fontSize: 30,
     fontFamily: "roboto-regular",
     marginTop: 30,
-    marginLeft: 18
+    marginLeft: 14
   },
+
   nlvm: {
     color: "rgba(66,66,66,1)",
     fontSize: 12,
     fontFamily: "roboto-regular",
     marginTop: 12,
-    marginLeft: 50
+    marginLeft: 45
   },
+
   loremIpsum: {
     width: 263,
-    height: 83,
+    height: 200,
     color: "rgba(66,66,66,1)",
     fontSize: 16,
     fontFamily: "roboto-regular",
@@ -156,14 +188,15 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     textAlign: "left",
     marginTop: 18,
-    marginLeft: 27
+    marginLeft: 20
   },
+
   chooseGame: {
     color: "rgba(66,66,66,1)",
     fontSize: 18,
     fontFamily: "roboto-regular",
-    marginTop: 123,
-    marginLeft: 56
+    marginTop: 70,
+    marginLeft: 50
   }
 });
 

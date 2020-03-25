@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     width: 229,
     height: 229,
     marginTop: 106,
-    marginLeft: 64
+    marginLeft: 75
   },
   divisionInput: {
     width: 81,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
-    marginLeft: 21
+    marginLeft: 45
   },
   divisionInputRow: {
     height: 85,
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     width: 212,
     height: 52,
     marginTop: 165,
-    marginLeft: 74
+    marginLeft: 90
   }
 });
 

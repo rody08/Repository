@@ -7,6 +7,7 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 function CoinToss(props) {
   return (
     <View style={styles.container}>
+
       <View style={styles.coin2Stack}>
         <Coin style={styles.coin2}></Coin>
         <Text style={styles.coin3}>$</Text>
@@ -15,11 +16,14 @@ function CoinToss(props) {
           style={styles.cashonClick}
         ></TouchableOpacity>
       </View>
+
       <MaterialHelperTextBox
         text1="How many flips?"
         style={styles.flipInput}
       ></MaterialHelperTextBox>
+
       <Text style={styles.swipe}>Swipe or press the button</Text>
+
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
           text1="Flip"
@@ -31,6 +35,7 @@ function CoinToss(props) {
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>
+
     </View>
   );
 }
@@ -40,21 +45,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(190,207,223,1)"
   },
+
   coin2: {
-    top: 14,
-    left: 12,
+    top: 20,
+    left: 21,
     width: 143,
     height: 143,
     position: "absolute"
   },
+
   coin3: {
-    top: 51,
-    left: 64,
+    top: 45,
+    left: 75,
     color: "rgba(255,255,255,1)",
     position: "absolute",
     fontSize: 70,
     fontFamily: "roboto-regular"
   },
+
   cashonClick: {
     top: 0,
     left: 0,
@@ -64,12 +72,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0
   },
+
   coin2Stack: {
     width: 169,
     height: 171,
     marginTop: 131,
-    marginLeft: 96
+    marginLeft: 100
   },
+
   flipInput: {
     width: 147,
     height: 85,
@@ -81,11 +91,13 @@ const styles = StyleSheet.create({
       height: 5,
       width: 5
     },
+
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
     marginTop: 197,
-    marginLeft: 106
+    marginLeft: 115
   },
+
   swipe: {
     color: "rgba(105,104,104,1)",
     fontSize: 14,
@@ -93,6 +105,7 @@ const styles = StyleSheet.create({
     marginTop: -153,
     alignSelf: "center"
   },
+
   cTflip: {
     top: 0,
     left: 0,
@@ -108,6 +121,7 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45
   },
+
   fBonClick: {
     top: 0,
     left: 2,
@@ -117,11 +131,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0
   },
+
   cTflipStack: {
     width: 211,
     height: 52,
     marginTop: 160,
-    marginLeft: 74
+    marginLeft: 90
   }
 });
 
