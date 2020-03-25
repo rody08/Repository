@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "rgba(190,207,223,1)"
+    backgroundColor: "rgba(143, 216, 255,1)"
   },
 
   red: {
@@ -102,11 +102,12 @@ const styles = StyleSheet.create({
     height: 116,
     backgroundColor: "rgba(255,0,0,1)",
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 10,
+      width: 10
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    shadowOpacity: 1,
+    elevation: 10
   },
 
   rectBlue: {
@@ -114,11 +115,12 @@ const styles = StyleSheet.create({
     height: 116,
     backgroundColor: "rgba(29,15,181,1)",
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 10,
+      width: 10
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    shadowOpacity: 1,
+    elevation: 10,
     marginLeft: 35
 
   },
@@ -127,11 +129,12 @@ const styles = StyleSheet.create({
     height: 116,
     backgroundColor: "rgba(77,140,5,1)",
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 10,
+      width: 10
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    shadowOpacity: 1,
+    elevation: 10,
     marginLeft: 35
   },
   rectYellow: {
@@ -139,11 +142,12 @@ const styles = StyleSheet.create({
     height: 116,
     backgroundColor: "rgba(248,231,28,1)",
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 10,
+      width: 10
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    shadowOpacity: 1,
+    elevation: 10,
     marginLeft: 35
   },
 
@@ -160,15 +164,16 @@ const styles = StyleSheet.create({
     left: 0,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(255,87,0,1)",
+    backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 10,
+      width: 10
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    shadowOpacity: 1,
+    elevation: 10
   },
 
   sRonClick: {
@@ -191,16 +196,17 @@ const styles = StyleSheet.create({
   rect1: {
     width: 260,
     height: 227,
-    backgroundColor: "rgba(239,221,205,1)",
+    backgroundColor: 'white',
     borderRadius: 33,
-    borderColor: "rgba(255,87,0,1)",
+    borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 4,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 10,
+      width: 10
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    shadowOpacity: 1,
+    elevation: 10,
     marginTop: -370,
     marginLeft: 55
   },

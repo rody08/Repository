@@ -43,7 +43,7 @@ function CoinToss(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(190,207,223,1)"
+    backgroundColor: "rgba(143, 216, 255,1)"
   },
 
   coin2: {
@@ -83,17 +83,17 @@ const styles = StyleSheet.create({
   flipInput: {
     width: 147,
     height: 85,
-    backgroundColor: "rgba(239,221,205,1)",
+    backgroundColor: 'white',
     borderRadius: 20,
-    borderColor: "rgba(255,114,0,1)",
+    borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 3,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1,
     marginTop: 197,
     marginLeft: 115
   },
@@ -111,15 +111,16 @@ const styles = StyleSheet.create({
     left: 0,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(255,87,0,1)",
+    backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    shadowColor: 'black',
+    elevation: 10,
+    shadowOpacity: 1
   },
 
   fBonClick: {

@@ -41,16 +41,16 @@ function IntroScreen(props) {
         </Text>
 
         <Text style={styles.loremIpsum}>
-          Welcome to our probability simulator{"\n"}
-          {"\n"}The purpose of this app is to help 
-          {"\n"}students visualize how probability 
-          {"\n"}works in different scenarios. 
+          Welcome to our simulator.
           {"\n"}
+          {"\n"}Here we will help you understand
+          {"\n"}probabilities. 
           {"\n"}
-          {"\n"}Software Developers:
-          {"\n"}Bhusan Paudel
-          {"\n"}Elwin Jaramillo
-          {"\n"}Rodolfo Soto 
+          {"\n"}Probability is measuring the chance 
+          {"\n"}that an event will happen.
+          {"\n"}
+          {"\n"}Let's go see how it works!
+          {"\n"}
 
         </Text>
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "rgba(190,207,223,1)"
+    backgroundColor: "rgba(143, 216, 255,1)"
   },
 
   introSButton: {
@@ -76,15 +76,16 @@ const styles = StyleSheet.create({
     left: 0,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(255,87,0,1)",
+    backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
 
   isBonClick: {
@@ -96,11 +97,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
 
   introSButtonStack: {
@@ -115,15 +117,16 @@ const styles = StyleSheet.create({
     left: 0,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(255,87,0,1)",
+    backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
 
   ictBonClick: {
@@ -148,16 +151,17 @@ const styles = StyleSheet.create({
   rect1: {
     width: 315,
     height: 370,
-    backgroundColor: "rgba(239,221,205,1)",
+    backgroundColor: 'white',
     borderRadius: 33,
-    borderColor: "rgba(255,87,0,1)",
+    borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 4,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1,
     marginTop: -496,
     marginLeft: 40
   },

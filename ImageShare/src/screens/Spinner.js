@@ -7,17 +7,20 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 function Spinner(props) {
   return (
     <View style={styles.container}>
+
       <View style={styles.ellipseStack}>
         <Svg viewBox="0 0 229.00 229.00" style={styles.ellipse}>
+
           <Ellipse
             strokeWidth={1}
-            fill="rgba(13,17,157,1)"
+            fill="rgba(255, 187, 0,1)"
             stroke="rgba(230, 230, 230,1)"
             cx={115}
             cy={115}
             rx={114}
             ry={114}
           ></Ellipse>
+
         </Svg>
         <Text style={styles.futureSpinner}>
           Spinner goes here{"\n"}Work in Progress!
@@ -49,11 +52,13 @@ function Spinner(props) {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(190,207,223,1)"
+    backgroundColor: "rgba(143, 216, 255,1)"
   },
+
   ellipse: {
     top: 0,
     left: 0,
@@ -61,56 +66,64 @@ const styles = StyleSheet.create({
     height: 229,
     position: "absolute"
   },
+
   futureSpinner: {
     top: 95,
     left: 33,
-    color: "rgba(255,255,255,1)",
+    color: 'white',
     position: "absolute",
     fontSize: 20,
     fontFamily: "courier-regular"
   },
+
   ellipseStack: {
     width: 229,
     height: 229,
     marginTop: 106,
     marginLeft: 75
   },
+
   divisionInput: {
     width: 81,
     height: 85,
-    backgroundColor: "rgba(239,221,205,1)",
+    backgroundColor: 'white',
     borderRadius: 21,
-    borderColor: "rgba(255,114,0,1)",
+    borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 3,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
+
   spinInput: {
     width: 80,
     height: 85,
-    backgroundColor: "rgba(239,221,205,1)",
+    backgroundColor: 'white',
     borderRadius: 20,
-    borderColor: "rgba(255,114,0,1)",
+    borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 3,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1,
     marginLeft: 45
   },
+  
   divisionInputRow: {
     height: 85,
     flexDirection: "row",
     marginTop: 160,
-    marginLeft: 89,
-    marginRight: 89
+    marginLeft: 90,
+    marginRight: 90
   },
+
   swipeInstructions: {
     color: "rgba(105,104,104,1)",
     fontSize: 14,
@@ -118,30 +131,34 @@ const styles = StyleSheet.create({
     marginTop: -147,
     marginLeft: 102
   },
+
   sButton: {
     top: 0,
     left: 0,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(255,87,0,1)",
+    backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
+
   sBonClick: {
     top: 0,
     left: 3,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(230, 230, 230,1)",
+    backgroundColor: 'white',
     position: "absolute",
     opacity: 0
   },
+  
   sButtonStack: {
     width: 212,
     height: 52,

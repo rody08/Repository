@@ -44,49 +44,57 @@ function CoinTossResults(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(190,207,223,1)"
+    backgroundColor: "rgba(143, 216, 255,1)"
   },
+
   heads: {
     color: "rgba(66,66,66,1)",
     fontSize: 14,
     fontFamily: "aldrich-regular"
   },
+
   tails: {
     color: "rgba(66,66,66,1)",
     fontSize: 14,
     fontFamily: "aldrich-regular",
-    marginLeft: 21
+    marginLeft: 25
   },
+
   headsRow: {
-    height: 14,
+    height: 15,
     flexDirection: "row",
-    marginTop: 73,
-    marginLeft: 128,
-    marginRight: 136
+    marginTop: 75,
+    marginLeft: 130,
+    marginRight: 135
   },
+
   rectHeads: {
     width: 30,
-    height: 116,
-    backgroundColor: "rgba(29,15,181,1)",
+    height: 115,
+    backgroundColor: "rgba(255,0,0,1)",
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
+
   rectTails: {
     width: 30,
-    height: 116,
+    height: 115,
     backgroundColor: "rgba(29,15,181,1)",
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
-    marginLeft: 30
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    marginLeft: 60
   },
+
   rectHeadsRow: {
     height: 116,
     flexDirection: "row",
@@ -94,21 +102,24 @@ const styles = StyleSheet.create({
     marginLeft: 133,
     marginRight: 137
   },
+
   ctrButton: {
     top: 0,
     left: 0,
     width: 209,
     height: 52,
-    backgroundColor: "rgba(255,87,0,1)",
+    backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
   },
+
   ctRonClick: {
     top: 0,
     left: 7,
@@ -128,16 +139,17 @@ const styles = StyleSheet.create({
   rect2: {
     width: 259,
     height: 186,
-    backgroundColor: "rgba(239,221,205,1)",
+    backgroundColor: "rgba(255, 255, 255,1)",
     borderRadius: 33,
-    borderColor: "rgba(255,87,0,1)",
+    borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 3,
     shadowOffset: {
-      height: 5,
-      width: 5
+      height: 20,
+      width: 20
     },
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.45,
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1,
     marginTop: -375,
     marginLeft: 65
   },
