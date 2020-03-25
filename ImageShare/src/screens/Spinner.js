@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import CupertinoHeaderWithActionButton from "../components/CupertinoHeaderWithActionButton";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
@@ -8,16 +7,6 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 function Spinner(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.sinnerHeaderStack}>
-        <CupertinoHeaderWithActionButton
-          text2="Spinner"
-          style={styles.sinnerHeader}
-        ></CupertinoHeaderWithActionButton>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("IntroScreen")}
-          style={styles.button1}
-        ></TouchableOpacity>
-      </View>
       <View style={styles.ellipseStack}>
         <Svg viewBox="0 0 229.00 229.00" style={styles.ellipse}>
           <Ellipse
@@ -65,28 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(190,207,223,1)"
   },
-  sinnerHeader: {
-    top: 0,
-    left: 1,
-    width: 359,
-    height: 44,
-    backgroundColor: "rgba(190,207,223,1)",
-    position: "absolute"
-  },
-  button1: {
-    top: 0,
-    left: 0,
-    width: 83,
-    height: 44,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    position: "absolute",
-    opacity: 0
-  },
-  sinnerHeaderStack: {
-    width: 360,
-    height: 44,
-    marginTop: 32
-  },
   ellipse: {
     top: 0,
     left: 0,
@@ -95,7 +62,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   futureSpinner: {
-    top: 94,
+    top: 95,
     left: 33,
     color: "rgba(255,255,255,1)",
     position: "absolute",
@@ -105,7 +72,7 @@ const styles = StyleSheet.create({
   ellipseStack: {
     width: 229,
     height: 229,
-    marginTop: 219,
+    marginTop: 106,
     marginLeft: 64
   },
   divisionInput: {
@@ -140,16 +107,16 @@ const styles = StyleSheet.create({
   divisionInputRow: {
     height: 85,
     flexDirection: "row",
-    marginTop: -403,
-    marginLeft: 87,
-    marginRight: 91
+    marginTop: 160,
+    marginLeft: 89,
+    marginRight: 89
   },
   swipeInstructions: {
     color: "rgba(105,104,104,1)",
     fontSize: 14,
     fontFamily: "roboto-regular",
-    marginTop: 33,
-    alignSelf: "center"
+    marginTop: -147,
+    marginLeft: 102
   },
   sButton: {
     top: 0,
@@ -178,7 +145,7 @@ const styles = StyleSheet.create({
   sButtonStack: {
     width: 212,
     height: 52,
-    marginTop: 359,
+    marginTop: 165,
     marginLeft: 74
   }
 });

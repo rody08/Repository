@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
-import CupertinoHeaderWithActionButton from "../components/CupertinoHeaderWithActionButton";
 
 function IntroScreen(props) {
   return (
@@ -17,11 +16,6 @@ function IntroScreen(props) {
           style={styles.isBonClick}
         ></TouchableOpacity>
       </View>
-      <CupertinoHeaderWithActionButton
-        text2="Welcome!"
-        text3=""
-        style={styles.introHeader}
-      ></CupertinoHeaderWithActionButton>
       <View style={styles.ictButtonStack}>
         <CupertinoButtonDanger
           text1="Coin Toss"
@@ -33,7 +27,6 @@ function IntroScreen(props) {
           style={styles.ictBonClick}
         ></TouchableOpacity>
       </View>
-      <Text style={styles.chooseGame}>Choose a game to begin:</Text>
       <View style={styles.rect1}>
         <Text style={styles.probabilitySimulator}>Probability Simulator</Text>
         <Text style={styles.nlvm}>
@@ -44,6 +37,7 @@ function IntroScreen(props) {
           {"\n"}The purpose of this app is to help {"\n"}visualize the power of
           probability.
         </Text>
+        <Text style={styles.chooseGame}>Choose a game to begin:</Text>
       </View>
     </View>
   );
@@ -90,12 +84,6 @@ const styles = StyleSheet.create({
     marginTop: 568,
     marginLeft: 74
   },
-  introHeader: {
-    width: 360,
-    height: 44,
-    backgroundColor: "rgba(190,207,223,1)",
-    marginTop: -588
-  },
   ictButton: {
     top: 0,
     left: 0,
@@ -125,19 +113,12 @@ const styles = StyleSheet.create({
   ictButtonStack: {
     width: 212,
     height: 52,
-    marginTop: 402,
+    marginTop: -142,
     marginLeft: 74
   },
-  chooseGame: {
-    color: "rgba(66,66,66,1)",
-    fontSize: 18,
-    fontFamily: "roboto-regular",
-    marginTop: -138,
-    marginLeft: 85
-  },
   rect1: {
-    width: 295,
-    height: 240,
+    width: 306,
+    height: 370,
     backgroundColor: "rgba(239,221,205,1)",
     borderRadius: 33,
     borderColor: "rgba(255,87,0,1)",
@@ -148,22 +129,22 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
-    marginTop: -293,
-    marginLeft: 32
+    marginTop: -496,
+    marginLeft: 25
   },
   probabilitySimulator: {
     color: "rgba(66,66,66,1)",
     fontSize: 30,
     fontFamily: "roboto-regular",
-    marginTop: 31,
-    marginLeft: 9
+    marginTop: 30,
+    marginLeft: 18
   },
   nlvm: {
     color: "rgba(66,66,66,1)",
     fontSize: 12,
     fontFamily: "roboto-regular",
-    marginTop: 14,
-    marginLeft: 41
+    marginTop: 12,
+    marginLeft: 50
   },
   loremIpsum: {
     width: 263,
@@ -174,8 +155,15 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     letterSpacing: 0,
     textAlign: "left",
-    marginTop: 33,
-    marginLeft: 17
+    marginTop: 18,
+    marginLeft: 27
+  },
+  chooseGame: {
+    color: "rgba(66,66,66,1)",
+    fontSize: 18,
+    fontFamily: "roboto-regular",
+    marginTop: 123,
+    marginLeft: 56
   }
 });
 

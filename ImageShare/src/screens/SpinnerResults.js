@@ -1,21 +1,10 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import CupertinoHeaderWithActionButton from "../components/CupertinoHeaderWithActionButton";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 
 function SpinnerResults(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.srHeaderStack}>
-        <CupertinoHeaderWithActionButton
-          text2="Results"
-          style={styles.srHeader}
-        ></CupertinoHeaderWithActionButton>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("IntroScreen")}
-          style={styles.button1}
-        ></TouchableOpacity>
-      </View>
       <View style={styles.redRow}>
         <Text style={styles.red}>Red</Text>
         <Text style={styles.blue}>Blue</Text>
@@ -54,28 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(190,207,223,1)"
   },
-  srHeader: {
-    top: 0,
-    left: 0,
-    width: 360,
-    height: 44,
-    backgroundColor: "rgba(190,207,223,1)",
-    position: "absolute"
-  },
-  button1: {
-    top: 0,
-    left: 0,
-    width: 83,
-    height: 44,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    position: "absolute",
-    opacity: 0
-  },
-  srHeaderStack: {
-    width: 360,
-    height: 44,
-    marginTop: 32
-  },
   red: {
     color: "rgba(66,66,66,1)",
     fontSize: 14,
@@ -85,26 +52,26 @@ const styles = StyleSheet.create({
     color: "rgba(66,66,66,1)",
     fontSize: 14,
     fontFamily: "aldrich-regular",
-    marginLeft: 36
+    marginLeft: 37
   },
   green: {
     color: "rgba(66,66,66,1)",
     fontSize: 14,
     fontFamily: "aldrich-regular",
-    marginLeft: 24
+    marginLeft: 23
   },
   yellow: {
     color: "rgba(66,66,66,1)",
     fontSize: 14,
     fontFamily: "aldrich-regular",
-    marginLeft: 14
+    marginLeft: 15
   },
   redRow: {
     height: 14,
     flexDirection: "row",
-    marginTop: 58,
-    marginLeft: 71,
-    marginRight: 70
+    marginTop: 78,
+    marginLeft: 76,
+    marginRight: 64
   },
   rectRed: {
     width: 30,
@@ -127,7 +94,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
-    marginLeft: 36
+    marginLeft: 35
   },
   rectGreen: {
     width: 30,
@@ -157,8 +124,8 @@ const styles = StyleSheet.create({
     height: 116,
     flexDirection: "row",
     marginTop: 17,
-    marginLeft: 69,
-    marginRight: 73
+    marginLeft: 75,
+    marginRight: 68
   },
   srButton: {
     top: 0,
@@ -187,12 +154,12 @@ const styles = StyleSheet.create({
   srButtonStack: {
     width: 212,
     height: 52,
-    marginTop: 342,
+    marginTop: 398,
     marginLeft: 79
   },
   rect1: {
     width: 260,
-    height: 181,
+    height: 227,
     backgroundColor: "rgba(239,221,205,1)",
     borderRadius: 33,
     borderColor: "rgba(255,87,0,1)",
@@ -203,15 +170,15 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.45,
-    marginTop: -329,
-    marginLeft: 55
+    marginTop: -352,
+    marginLeft: 53
   },
   loremIpsum1: {
     color: "rgba(66,66,66,1)",
     fontSize: 26,
     fontFamily: "roboto-regular",
-    marginTop: 13,
-    marginLeft: 38
+    marginTop: 36,
+    marginLeft: 40
   }
 });
 
