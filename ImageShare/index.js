@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import MaterialButtonPink from "./components/MaterialButtonPink";
 
 function Index(props) {
   return (
     <View style={styles.container}>
-      <MaterialButtonPink
-        style={styles.materialButtonPink}
-      ></MaterialButtonPink>
     </View>
   );
 }

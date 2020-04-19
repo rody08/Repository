@@ -10,11 +10,6 @@ function MaterialCardWithoutImage(props) {
       </View>
       <View style={styles.body2}>
         <Text style={styles.bodyText}>
-          BuilderX is a screen design tool which codes React Native for you
-          which design without boundaries, the code is generated simultaneously.
-          Save your designed components as symbol and then simply add it to your
-          design next time.Live preview works on real device. Shout out to the
-          Expo team to make it happen.
         </Text>
       </View>
       <View style={styles.actionBody}>

@@ -5,6 +5,11 @@ import Svg, { Ellipse } from "react-native-svg";
 function Coin(props) {
   return (
     <View style={[styles.container, props.style]}>
+      
+          <Animated.Image
+          style={{transform: [{rotate: spin}] }}
+          source={{uri: 'https://static.timesofisrael.com/www/uploads/2020/01/Untitled-28.jpg'}} />
+
       <Svg viewBox="0 0 143.00 143.00" style={styles.ellipse}>
         <Ellipse
           strokeWidth={17}

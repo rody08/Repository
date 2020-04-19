@@ -6,7 +6,7 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 
 spinValue = new Animated.Value(0)
 
-// First set up animation with interpolation (0 to 1)
+//set up animation with interpolation (0 to 1)
 Animated.timing(
     this.spinValue,
   {
