@@ -13,10 +13,6 @@ const styles = StyleSheet.create({
     width: 100,
     height: 36
   },
-  materialButtonPink: {
-    width: 100,
-    height: 36
-  }
 });
 
 export default Index;
