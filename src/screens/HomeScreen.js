@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 
-function Untitled(props) {
+function HomeScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.rect}>
         <Text style={styles.loremIpsum}>PROBABILITY APP FOR KIDS</Text>
       </View>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate("Untitled1")}
+        onPress={() => props.navigation.navigate("LoginPage")}
         style={styles.button}
       >
         <Text style={styles.logIn}>LOG-IN</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate("Untitled2")}
+        onPress={() => props.navigation.navigate("SignUpPage")}
         style={styles.button2}
       >
         <Text style={styles.signUp}>SIGN-UP</Text>
@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled;
+export default HomeScreen;

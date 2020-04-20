@@ -8,7 +8,7 @@ import MaterialFixedLabelTextbox6 from "../components/MaterialFixedLabelTextbox6
 import MaterialFixedLabelTextbox7 from "../components/MaterialFixedLabelTextbox7";
 import MaterialRightIconTextbox from "../components/MaterialRightIconTextbox";
 
-function Untitled2(props) {
+function SignUpPage(props) {
   return (
     <View style={styles.container}>
       <View style={styles.rect}>
@@ -39,7 +39,7 @@ function Untitled2(props) {
         style={styles.materialRightIconTextbox}
       ></MaterialRightIconTextbox>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate("Untitled1")}
+        onPress={() => props.navigation.navigate("LoginPage")}
         style={styles.button}
       >
         <Text style={styles.createAnAccount}>CREATE AN ACCOUNT</Text>
@@ -147,4 +147,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled2;
+export default SignUpPage;

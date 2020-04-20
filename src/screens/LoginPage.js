@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/Entypo";
 import MaterialFixedLabelTextbox from "../components/MaterialFixedLabelTextbox";
 import MaterialFixedLabelTextbox1 from "../components/MaterialFixedLabelTextbox1";
 
-function Untitled1(props) {
+function LoginPage(props) {
   return (
     <View style={styles.container}>
       <View style={styles.rect}>
@@ -12,11 +12,11 @@ function Untitled1(props) {
           <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("Untitled")}
+              onPress={() => props.navigation.navigate("HomeScreen")}
               style={styles.button2}
             ></TouchableOpacity>
           </View>
-          <Text style={styles.logIn}>LOG-IN</Text>
+          <Text style={styles.logIn}>LOG IN</Text>
         </View>
       </View>
       <MaterialFixedLabelTextbox
@@ -26,7 +26,7 @@ function Untitled1(props) {
         style={styles.materialFixedLabelTextbox12}
       ></MaterialFixedLabelTextbox1>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate("Untitled3")}
+        onPress={() => props.navigation.navigate("IntroScreen")}
         style={styles.button}
       >
         <Text style={styles.logIn2}>LOG-IN</Text>
@@ -110,4 +110,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled1;
+export default LoginPage;

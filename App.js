@@ -10,16 +10,15 @@ import IntroScreen from "./src/screens/IntroScreen";
 import Spinner from "./src/screens/Spinner";
 import CoinTossResults from "./src/screens/CoinTossResults";
 import SpinnerResults from "./src/screens/SpinnerResults";
-import Untitled from "./src/screens/Untitled";
-import Untitled1 from "./src/screens/Untitled1";
-import Untitled2 from "./src/screens/Untitled2";
-import Untitled3 from "./src/screens/Untitled3";
+import HomeScreen from "./src/screens/HomeScreen";
+import LoginPage from "./src/screens/LoginPage";
+import SignUpPage from "./src/screens/SignUpPage";
+
 
 const DrawerNavigation = createDrawerNavigator({
-  Untitled: Untitled,
-  Untitled1: Untitled1,
-  Untitled2: Untitled2,
-  Untitled3: Untitled3,
+  HomeScreen: HomeScreen,
+  LoginPage: LoginPage,
+  SignUpPage: SignUpPage,
   IntroScreen: IntroScreen,
   CoinToss: CoinToss,
   Spinner: Spinner,
@@ -32,10 +31,9 @@ const StackNavigation = createStackNavigator(
     DrawerNavigation: {
       screen: DrawerNavigation
     },
-    Untitled: Untitled,
-    Untitled1: Untitled1,
-    Untitled2: Untitled2,
-    Untitled3: Untitled3,
+    HomeScreen: HomeScreen,
+    LoginPage: LoginPage,
+    SignUpPage: SignUpPage,
     IntroScreen: IntroScreen,
     CoinToss: CoinToss,
     Spinner: Spinner,
