@@ -17,10 +17,6 @@ function CoinToss(props) {
         ></TouchableOpacity>
       </View>
 
-      <Animated.Image
-          style={{transform: [{rotate: spin}] }}
-          source={{uri: 'https://static.timesofisrael.com/www/uploads/2020/01/Untitled-28.jpg'}} />
-
       <MaterialHelperTextBox
         text1="How many flips?"
         style={styles.flipInput}
