@@ -4,25 +4,6 @@ import Coin from "../components/Coin";
 import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 
-spinValue = new Animated.Value(0)
-
-//set up animation with interpolation (0 to 1)
-Animated.timing(
-    this.spinValue,
-  {
-    toValue: 1,
-    duration: 3000,
-    easing: Easing.linear,
-    useNativeDriver: true
-  }
-).start()
-
-const spin = this.spinValue.interpolate({
-  inputRange: [0, 1],
-  outputRange: ['0deg', '360deg']
-})
-
-
 function CoinToss(props) {
   return (
     <View style={styles.container}>
