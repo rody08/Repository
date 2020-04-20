@@ -7,8 +7,8 @@ function MaterialHelperTextBox(props) {
       <Text style={styles.label}>{props.text1 || "StackedLabel"}</Text>
       <TextInput
         placeholder="Input"
-        blurOnSubmit={false}
-        clearTextOnFocus={false}
+        blurOnSubmit={true}
+        clearTextOnFocus={true}
         style={styles.textInput}
       ></TextInput>
     </View>

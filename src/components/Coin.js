@@ -1,54 +1,55 @@
 import React, { Component } from "react";
 import { Animated, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Svg, { Ellipse } from "react-native-svg";
+//import Svg, { Ellipse } from "react-native-svg";
 
-spinValue = new Animated.Value(0)
+export default class Coin extends Component{
 
-//set up animation with interpolation (0 to 1)
-Animated.timing(
-    this.spinValue,
-  {
-    toValue: 1,
-    duration: 3000,
-    easing: Easing.linear,
-    useNativeDriver: true
+  componentWillMount() {
+    this.animatedValue = new Animated.Value(0);
   }
-).start()
-
-const spin = this.spinValue.interpolate({
-  inputRange: [0, 1],
-  outputRange: ['0deg', '360deg']
-})
-
-function Coin(props) {
-  return (
-    <View style={[styles.container, props.style]}>
-      
-          <Animated.Image
-          style={{transform: [{rotate: spin}] }}
-          source={{uri: 'https://static.timesofisrael.com/www/uploads/2020/01/Untitled-28.jpg'}} />
-
-      <Svg viewBox="0 0 143.00 143.00" style={styles.ellipse}>
-        <Ellipse
-          strokeWidth={17}
-          fill="rgba(255,135,34,1)"
-          stroke="rgba(255,201,0,1)"
-          cx={72}
-          cy={72}
-          rx={63}
-          ry={63}
-        ></Ellipse>
-      </Svg>
-    </View>
-  );
+  componentDidMount() {
+    Animated.timing(this.animatedValue, {
+      toValue: 1,
+      duration: 1500
+    }).start()
+  }
+  
+  render() {
+    const interpolateRotation = this.animatedValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0rad', '10rad'],
+    })
+    const animatedStyle = {
+      transform: [
+        { rotate: interpolateRotation }
+      ]
+    }
+    return (
+      <View style={styles.container}>
+        <Animated.View style={[styles.box, animatedStyle]}>
+          <Text style={styles.text}>Spinner</Text>
+        </Animated.View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {},
-  ellipse: {
-    width: 143,
-    height: 143
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#333',
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  text: {
+    color: "#FFF"
   }
 });
 
-export default Coin;
+//AppRegistry.registerComponent('animatedbasic', () => animatedbasic);

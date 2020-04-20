@@ -11,7 +11,7 @@ function CoinToss(props) {
 
       <View style={styles.coin2Stack}>
         <Coin style={styles.coin2}></Coin>
-        <Text style={styles.coin3}>$</Text>
+
         <TouchableOpacity
           onPress={() => props.navigation.navigate("CoinTossResults")}
           style={styles.cashonClick}
