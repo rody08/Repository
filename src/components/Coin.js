@@ -1,6 +1,24 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { Animated, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
+
+spinValue = new Animated.Value(0)
+
+//set up animation with interpolation (0 to 1)
+Animated.timing(
+    this.spinValue,
+  {
+    toValue: 1,
+    duration: 3000,
+    easing: Easing.linear,
+    useNativeDriver: true
+  }
+).start()
+
+const spin = this.spinValue.interpolate({
+  inputRange: [0, 1],
+  outputRange: ['0deg', '360deg']
+})
 
 function Coin(props) {
   return (
