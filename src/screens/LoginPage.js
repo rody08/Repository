@@ -16,7 +16,7 @@ function LoginPage(props) {
               style={styles.button2}
             ></TouchableOpacity>
           </View>
-          <Text style={styles.logIn}>LOG-IN</Text>
+          <Text style={styles.logIn}>LOG IN</Text>
         </View>
       </View>
       <MaterialFixedLabelTextbox
