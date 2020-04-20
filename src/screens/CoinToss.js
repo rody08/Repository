@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import React, { Component, useState } from "react";
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
 import Coin from "../components/Coin";
 import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 
 function CoinToss(props) {
+  const [text, setText] = useState('');
   return (
     <View style={styles.container}>
 
@@ -22,6 +23,14 @@ function CoinToss(props) {
         style={styles.flipInput}
       ></MaterialHelperTextBox>
 
+      <View style={{padding: 10}}>
+        <TextInput
+          style = {{height:40}}
+          placeholder = "Input"
+          onChangeText = {text => setText(text)}
+          defaultValue = {text}/>
+      </View>
+      
       <Text style={styles.swipe}>Swipe or press the button</Text>
 
       <View style={styles.cTflipStack}>
@@ -102,7 +111,7 @@ const styles = StyleSheet.create({
     color: "rgba(105,104,104,1)",
     fontSize: 14,
     fontFamily: "roboto-regular",
-    marginTop: -153,
+    marginTop: -180,
     alignSelf: "center"
   },
 
