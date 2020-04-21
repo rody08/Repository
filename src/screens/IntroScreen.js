@@ -46,8 +46,7 @@ function IntroScreen(props) {
           {"\n"}Here we will help you understand
           {"\n"}probabilities. 
           {"\n"}
-          {"\n"}Probability is measuring the chance 
-          {"\n"}that an event will happen.
+          {"\n"}Probability is the extent to which an event is likely to occur.
           {"\n"}
           {"\n"}Let's go see how it works!
           {"\n"}
@@ -79,13 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1
+    
   },
 
   isBonClick: {
@@ -120,13 +113,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1
+    
   },
 
   ictBonClick: {
@@ -190,7 +177,7 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     lineHeight: 18,
     letterSpacing: 0,
-    textAlign: "left",
+    textAlign: "center",
     marginTop: 18,
     marginLeft: 20
   },

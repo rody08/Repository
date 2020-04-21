@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
+import Icon from "react-native-vector-icons/Entypo";
 
 function CoinTossResults(props) {
   return (
     <View style={styles.container}>
 
+          <View style={styles.icon1Stack}>
+            <Icon name="chevron-left" style={styles.icon1}></Icon>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("IntroScreen")}
+              style={styles.button2}
+            ></TouchableOpacity>
+          </View>
       <View style={styles.headsRow}>
         <Text style={styles.heads}> Heads </Text>
         <Text style={styles.tails}> Tails </Text>
@@ -143,13 +151,10 @@ const styles = StyleSheet.create({
     borderRadius: 33,
     borderColor: "rgba(255, 151, 0,1)",
     borderWidth: 3,
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
+    
     elevation: 10,
     shadowColor: 'black',
-    shadowOpacity: 1,
+ 
     marginTop: -375,
     marginLeft: 65
   },
@@ -160,7 +165,31 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     marginTop: 30,
     marginLeft: 33
-  }
+  },
+  icon1Stack: {
+    width: 43,
+    height: 47
+  },
+
+  icon1: {
+    top: 50,
+    left: 10,
+    position: "absolute",
+    color: "rgba(9,8,8,1)",
+    fontSize: 40,
+    height: 40,
+    width: 40
+  },
+  button2: {
+    top: 50,
+    left: 10,
+    width: 43,
+    height: 47,
+    backgroundColor: "rgba(230, 230, 230,1)",
+    position: "absolute",
+    opacity: 0.25
+  },
+
 });
 
 export default CoinTossResults;

@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
+import Icon from "react-native-vector-icons/Entypo";
 
 function SpinnerResults(props) {
   return (
     <View style={styles.container}>
-
+      <View style={styles.icon1Stack}>
+            <Icon name="chevron-left" style={styles.icon1}></Icon>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("IntroScreen")}
+              style={styles.button2}
+            ></TouchableOpacity>
+        </View>
       <View style={styles.redRow}>
 
         <Text style={styles.red}>Red</Text>
@@ -217,7 +224,27 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     marginTop: 10,
     marginLeft: 40
-  }
+  },
+
+  icon1: {
+    top: 50,
+    left: 10,
+    position: "absolute",
+    color: "rgba(9,8,8,1)",
+    fontSize: 40,
+    height: 40,
+    width: 40
+  },
+  button2: {
+    top: 50,
+    left: 10,
+    width: 43,
+    height: 47,
+    backgroundColor: "rgba(230, 230, 230,1)",
+    position: "absolute",
+    opacity: 0.25
+  },
+
 });
 
 export default SpinnerResults;
