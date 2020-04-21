@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   logIn: {
     color: "#121212",
-    fontSize: 50,
+    fontSize: 45,
     fontFamily: "roboto-700",
     textAlign:"center",
     alignSelf: "center",
