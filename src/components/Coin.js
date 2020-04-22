@@ -1,35 +1,59 @@
-import React, { Component } from "react";
-import { Animated, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { Component, useState } from "react";
+import { Animated, Button, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 //import Svg, { Ellipse } from "react-native-svg";
 
 export default class Coin extends Component{
 
-  componentWillMount() {
-    this.animatedValue = new Animated.Value(0);
+  constructor() {
+    super()
+    this.animated = new Animated.Value(0);
+    // translateY
+    var snapshot = 50, radius = 100;
+    var inputRange = [], outputRange = [];
+
+    for (var i=0; i<=snapshot; ++i) {
+        var value = i/snapshot;
+        var move = Math.cos(value * Math.PI * 2) * radius;
+
+        inputRange.push(value);
+        outputRange.push(move);
+    }
+    this.translateY = this.animated.interpolate({ inputRange, outputRange });
   }
-  componentDidMount() {
-    Animated.timing(this.animatedValue, {
+
+  animate() {
+    this.animated.setValue(0)
+    Animated.timing(this.animated, {
       toValue: 1,
-      duration: 1500
-    }).start()
+      duration: 1500,
+      useNativeDriver: true,
+    }).start();
   }
   
-  render() {
-    const interpolateRotation = this.animatedValue.interpolate({
+  render() {      
+
+    const spin = this.animated.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0rad', '10rad'],
-    })
-    const animatedStyle = {
-      transform: [
-        { rotate: interpolateRotation }
-      ]
-    }
+      outputRange: ['0deg', '900deg']});
+
+    const transform = [
+      {translateY: this.translateY},
+      {rotateX: spin},
+      {perspective: 1000}]; 
+
+    //const [count, setCount] = useState(0);
+    //const onPress = () => setCount(prevCount => prevCount + 1);
+
     return (
       <View style={styles.container}>
-        <Animated.View style={[styles.box, animatedStyle]}>
-          <Text style={styles.text}>Spinner</Text>
+        <Animated.View style={{transform}}>
+         <TouchableOpacity 
+            style={styles.circle}
+            title="Flip" onPress={() => { this.animate() }}>
+            <Text>$</Text>
+         </TouchableOpacity>
         </Animated.View>
-      </View>
+    </View>
     );
   }
 }
@@ -40,16 +64,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  box: {
+  circle: {
     width: 100,
     height: 100,
-    backgroundColor: '#333',
+    borderRadius: 100/2,
+    backgroundColor: 'gold',
     alignItems: "center",
     justifyContent: "center"
   },
   text: {
-    color: "#FFF"
+    color: "#FFF",
+    fontSize: 40
   }
 });
-
-//AppRegistry.registerComponent('animatedbasic', () => animatedbasic);

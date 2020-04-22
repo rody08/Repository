@@ -13,8 +13,8 @@ function CoinToss(props) {
         <Coin style={styles.coin2}></Coin>
 
         <TouchableOpacity
-          onPress={() => props.navigation.navigate("CoinTossResults")}
-          style={styles.cashonClick}
+          //onPress={() => props.navigation.navigate("CoinTossResults")}
+          //style={styles.cashonClick}
         ></TouchableOpacity>
       </View>
 
@@ -35,10 +35,11 @@ function CoinToss(props) {
 
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
-          text1="Flip"
+          text1="Results!"
           button1="CoinTossResults"
           style={styles.cTflip}
         ></CupertinoButtonDanger>
+        
         <TouchableOpacity
           onPress={() => props.navigation.navigate("CoinTossResults")}
           style={styles.fBonClick}
