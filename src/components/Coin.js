@@ -34,7 +34,7 @@ export default class Coin extends Component{
 
     const spin = this.animated.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0deg', '900deg']});
+      outputRange: ['0deg', '1080deg']});
 
     const transform = [
       {translateY: this.translateY},
@@ -50,7 +50,7 @@ export default class Coin extends Component{
          <TouchableOpacity 
             style={styles.circle}
             title="Flip" onPress={() => { this.animate() }}>
-            <Text>$</Text>
+            <Text style = {styles.text}>$</Text>
          </TouchableOpacity>
         </Animated.View>
     </View>
@@ -68,12 +68,15 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 100/2,
+    borderWidth: 5,
+    borderColor: 'orange',
     backgroundColor: 'gold',
     alignItems: "center",
     justifyContent: "center"
   },
   text: {
-    color: "#FFF",
-    fontSize: 40
+    color: 'black',
+    fontSize: 40,
+    fontWeight: "bold"
   }
 });
