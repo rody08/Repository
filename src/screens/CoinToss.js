@@ -31,7 +31,7 @@ function CoinToss(props) {
           defaultValue = {text}/>
       </View>
       
-      <Text style={styles.swipe}>Swipe or press the button</Text>
+      <Text style={styles.swipe}>Press the Coin!</Text>
 
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
