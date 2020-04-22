@@ -19,11 +19,19 @@ function HomeScreen(props) {
       >
         <Text style={styles.signUp}>SIGN-UP</Text>
       </TouchableOpacity>
+
       <Image
         source={require("../assets/images/login_im.png")}
         resizeMode="contain"
         style={styles.image}
       ></Image>
+
+        <TouchableOpacity
+        onPress={() => props.navigation.navigate("IntroScreen")}
+        style={styles.button3}
+        >
+        <Text style={styles.guest}>GUEST</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -44,8 +52,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: "roboto-700",
     marginTop: 100,
-    marginLeft: 100,
-    alignItems: "center"
+    alignSelf: "center"
     
     
   },
@@ -57,12 +64,28 @@ const styles = StyleSheet.create({
     marginTop: 297,
     
   },
+  button3: {
+    width: 226,
+    height: 45,
+    backgroundColor: "rgba(225,137,91,1)",
+    alignSelf:"center",
+    marginTop: 200,
+    
+  },
   logIn: {
     color: "#121212",
     fontSize: 25,
     fontFamily: "roboto-regular",
-    marginTop: 10,
-    marginLeft: 77,
+    marginTop: 11,
+    alignSelf:"center"
+    
+  },
+  guest: {
+    color: "#121212",
+    fontSize: 25,
+    fontFamily: "roboto-regular",
+    marginTop: 11,
+    alignSelf:"center"
   },
   button2: {
     width: 226,
@@ -76,7 +99,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: "roboto-regular",
     marginTop: 11,
-    marginLeft: 74
+    alignSelf:"center"
     
   },
   image: {

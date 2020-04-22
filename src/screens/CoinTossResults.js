@@ -170,7 +170,6 @@ const styles = StyleSheet.create({
     width: 43,
     height: 47
   },
-
   icon1: {
     top: 50,
     left: 10,

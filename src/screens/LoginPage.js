@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     color: "#121212",
     fontSize: 45,
     fontFamily: "roboto-700",
-    textAlign:"center",
     alignSelf: "center",
     marginBottom:-100
   },
