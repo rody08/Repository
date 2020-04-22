@@ -13,10 +13,14 @@ function SignUpPage(props) {
     <View style={styles.container}>
       <View style={styles.rect}>
         <View style={styles.iconStackRow}>
-          <View style={styles.iconStack}>
-            <Icon name="chevron-left" style={styles.icon}></Icon>
-            <TouchableOpacity style={styles.button2}></TouchableOpacity>
+        <View style={styles.icon1Stack}>
+            <Icon name="chevron-left" style={styles.icon1}></Icon>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("HomeScreen")}
+              style={styles.button2}
+            ></TouchableOpacity>
           </View>
+          
           <Text style={styles.signUp}>SIGN-UP</Text>
         </View>
       </View>
@@ -39,7 +43,7 @@ function SignUpPage(props) {
         style={styles.materialRightIconTextbox}
       ></MaterialRightIconTextbox>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate("LoginPage")}
+        onPress={() => props.navigation.navigate("LoginSuccess")}
         style={styles.button}
       >
         <Text style={styles.createAnAccount}>CREATE AN ACCOUNT</Text>
@@ -53,10 +57,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   rect: {
-    width: 360,
-    height: 73,
+  
     backgroundColor: "rgba(248,132,81,1)",
-    flexDirection: "row"
+    height:200
   },
   icon: {
     top: 5,
@@ -82,10 +85,10 @@ const styles = StyleSheet.create({
   },
   signUp: {
     color: "#121212",
-    fontSize: 27,
+    fontSize: 40,
     fontFamily: "roboto-700",
-    marginLeft: 8,
-    marginTop: 12
+    alignSelf: "center",
+    marginBottom:-100
   },
   iconStackRow: {
     height: 51,
@@ -144,7 +147,30 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     marginTop: 16,
     marginLeft: 23
-  }
+  },
+  icon1Stack: {
+    width: 43,
+    height: 47
+  },
+
+  icon1: {
+    top: 50,
+    left: 10,
+    position: "absolute",
+    color: "rgba(9,8,8,1)",
+    fontSize: 40,
+    height: 40,
+    width: 40
+  },
+  button2: {
+    top: 50,
+    left: 10,
+    width: 43,
+    height: 47,
+    backgroundColor: "rgba(230, 230, 230,1)",
+    position: "absolute",
+    opacity: 0.25
+  },
 });
 
 export default SignUpPage;

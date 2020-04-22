@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, TextInput } from "react-native";
 function MaterialFixedLabelTextbox1(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <Text style={styles.label}>USERNAME</Text>
+      <Text style={styles.label}>Username</Text>
       <TextInput style={styles.inputStyle}></TextInput>
     </View>
   );
