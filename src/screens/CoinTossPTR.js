@@ -30,15 +30,17 @@ export default class App extends React.Component {
     this.renderer.setClearColor(0xffffff)
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.z = 5;
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    this.camera.position.z = 40;
+    const geometry = new THREE.CylinderGeometry(5.9, 5.9, 1, 32);
+    const geometry1 = new THREE.CylinderGeometry(6, 6, 0.99, 32);
 
-    const material = new THREE.MeshPhongMaterial({
-      color: 0xff0000,
-    });
+    const material = new THREE.MeshPhysicalMaterial({color: 0xB5B3AD,});
+    const material1 = new THREE.MeshPhysicalMaterial({color: 0x61462A,});
     
-    this.cube = new THREE.Mesh(geometry, material);
-    this.scene.add(this.cube);
+    this.coin = new THREE.Mesh(geometry, material);
+    this.coinEdge = new THREE.Mesh(geometry1, material1);
+    this.scene.add(this.coin);
+    this.scene.add(this.coinEdge);
 
     this.scene.add(new THREE.AmbientLight(0x404040));
 
@@ -48,8 +50,10 @@ export default class App extends React.Component {
   };
 
   onRender = delta => {
-    this.cube.rotation.x += 3.5 * delta;
-    this.cube.rotation.y += 2 * delta;
+    this.coin.rotation.x += 3.5 * delta;
+    //this.coin.rotation.y += 2 * delta;
+    this.coinEdge.rotation.x += 3.5 * delta;
+    //this.coinEdge.rotation.y += 2 * delta;
     this.renderer.render(this.scene, this.camera);
   };
 }
