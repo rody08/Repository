@@ -5,7 +5,7 @@ function HomeScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.rect}>
-        <Text style={styles.loremIpsum}>PROBABILITY APP FOR KIDS</Text>
+        <Text style={styles.loremIpsum}>Probability Simulator</Text>
       </View>
       <TouchableOpacity
         onPress={() => props.navigation.navigate("LoginPage")}
@@ -19,11 +19,19 @@ function HomeScreen(props) {
       >
         <Text style={styles.signUp}>SIGN-UP</Text>
       </TouchableOpacity>
+
       <Image
         source={require("../assets/images/login_im.png")}
         resizeMode="contain"
         style={styles.image}
       ></Image>
+
+        <TouchableOpacity
+        onPress={() => props.navigation.navigate("IntroScreen")}
+        style={styles.button3}
+        >
+        <Text style={styles.guest}>GUEST</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -33,44 +41,66 @@ const styles = StyleSheet.create({
     flex: 1
   },
   rect: {
-    width: 360,
-    height: 73,
-    backgroundColor: "rgba(248,132,81,1)"
+    
+    backgroundColor: "rgba(248,132,81,1)",
+    height: 200
+    
+    
   },
   loremIpsum: {
     color: "rgba(0,0,0,1)",
     fontSize: 24,
     fontFamily: "roboto-700",
-    marginTop: 28,
-    marginLeft: 4
+    marginTop: 100,
+    alignSelf: "center"
+    
+    
   },
   button: {
     width: 226,
     height: 45,
     backgroundColor: "rgba(225,137,91,1)",
+    alignSelf:"center",
     marginTop: 297,
-    marginLeft: 59
+    
+  },
+  button3: {
+    width: 226,
+    height: 45,
+    backgroundColor: "rgba(225,137,91,1)",
+    alignSelf:"center",
+    marginTop: 200,
+    
   },
   logIn: {
     color: "#121212",
     fontSize: 25,
     fontFamily: "roboto-regular",
-    marginTop: 10,
-    marginLeft: 77
+    marginTop: 11,
+    alignSelf:"center"
+    
+  },
+  guest: {
+    color: "#121212",
+    fontSize: 25,
+    fontFamily: "roboto-regular",
+    marginTop: 11,
+    alignSelf:"center"
   },
   button2: {
     width: 226,
-    height: 47,
+    height: 45,
     backgroundColor: "rgba(220,179,73,1)",
     marginTop: 27,
-    marginLeft: 59
+    alignSelf: "center"
   },
   signUp: {
     color: "#121212",
     fontSize: 25,
     fontFamily: "roboto-regular",
     marginTop: 11,
-    marginLeft: 74
+    alignSelf:"center"
+    
   },
   image: {
     width: 200,

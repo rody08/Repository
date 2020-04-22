@@ -16,7 +16,7 @@ function LoginPage(props) {
               style={styles.button2}
             ></TouchableOpacity>
           </View>
-          <Text style={styles.logIn}>LOG IN</Text>
+          <Text style={styles.logIn}>LOG-IN</Text>
         </View>
       </View>
       <MaterialFixedLabelTextbox
@@ -40,13 +40,11 @@ const styles = StyleSheet.create({
     flex: 1
   },
   rect: {
-    width: 360,
-    height: 74,
     backgroundColor: "rgba(248,132,81,1)",
-    flexDirection: "row"
+    height: 200
   },
   icon1: {
-    top: 3,
+    top: 50,
     left: 0,
     position: "absolute",
     color: "rgba(9,8,8,1)",
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
     width: 40
   },
   button2: {
-    top: 0,
+    top: 50,
     left: 0,
     width: 43,
     height: 47,
@@ -69,10 +67,10 @@ const styles = StyleSheet.create({
   },
   logIn: {
     color: "#121212",
-    fontSize: 25,
+    fontSize: 45,
     fontFamily: "roboto-700",
-    marginLeft: 17,
-    marginTop: 11
+    alignSelf: "center",
+    marginBottom:-100
   },
   icon1StackRow: {
     height: 47,
