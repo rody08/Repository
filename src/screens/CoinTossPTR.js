@@ -31,16 +31,17 @@ export default class App extends React.Component {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     this.camera.position.z = 40;
+    
     const geometry = new THREE.CylinderGeometry(5.9, 5.9, 1, 32);
     const geometry1 = new THREE.CylinderGeometry(6, 6, 0.99, 32);
 
-    const material = new THREE.MeshPhysicalMaterial({color: 0xB5B3AD,});
+    const material = new THREE.MeshPhysicalMaterial({color: 0xF4D03F,});
     const material1 = new THREE.MeshPhysicalMaterial({color: 0x61462A,});
     
     this.coin = new THREE.Mesh(geometry, material);
     this.coinEdge = new THREE.Mesh(geometry1, material1);
     this.scene.add(this.coin);
-    this.scene.add(this.coinEdge);
+    this.scene.add(this.coinEdge); 
 
     this.scene.add(new THREE.AmbientLight(0x404040));
 
