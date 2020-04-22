@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import React, { Component, useState } from "react";
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
 import Coin from "../components/Coin";
 import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
@@ -8,6 +8,9 @@ import Icon from "react-native-vector-icons/Entypo";
 
 
 function CoinToss(props) {
+
+  const [text, setText] = useState('');
+
   return (
     <View style={styles.container}>
     
@@ -23,11 +26,6 @@ function CoinToss(props) {
         
       <View style={styles.coin2Stack}>
         <Coin style={styles.coin2}></Coin>
-        <Text style={styles.coin3}>$</Text>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("CoinTossResults")}
-          style={styles.cashonClick}
-        ></TouchableOpacity>
       </View>
 
       <MaterialHelperTextBox
@@ -35,14 +33,23 @@ function CoinToss(props) {
         style={styles.flipInput}
       ></MaterialHelperTextBox>
 
-      <Text style={styles.swipe}>Swipe or press the button</Text>
+      <View style={{padding: 10}}>
+        <TextInput
+          style = {{height:40}}
+          placeholder = "Input"
+          onChangeText = {text => setText(text)}
+          defaultValue = {text}/>
+      </View>
+      
+      <Text style={styles.press}>Press the Coin!</Text>
 
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
-          text1="Flip"
+          text1="Results!"
           button1="CoinTossResults"
           style={styles.cTflip}
         ></CupertinoButtonDanger>
+        
         <TouchableOpacity
           onPress={() => props.navigation.navigate("CoinTossResults")}
           style={styles.fBonClick}
@@ -76,16 +83,6 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular"
   },
 
-  cashonClick: {
-    top: 0,
-    left: 0,
-    width: 169,
-    height: 171,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    position: "absolute",
-    opacity: 0
-  },
-
   coin2Stack: {
     width: 169,
     height: 171,
@@ -111,11 +108,11 @@ const styles = StyleSheet.create({
     marginLeft: 115
   },
 
-  swipe: {
+  press: {
     color: "rgba(105,104,104,1)",
     fontSize: 14,
     fontFamily: "roboto-regular",
-    marginTop: -153,
+    marginTop: -180,
     alignSelf: "center"
   },
 

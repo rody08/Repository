@@ -1,54 +1,82 @@
-import React, { Component } from "react";
-import { Animated, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Svg, { Ellipse } from "react-native-svg";
+import React, { Component, useState } from "react";
+import { Animated, Button, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+//import Svg, { Ellipse } from "react-native-svg";
 
-spinValue = new Animated.Value(0)
+export default class Coin extends Component{
 
-//set up animation with interpolation (0 to 1)
-Animated.timing(
-    this.spinValue,
-  {
-    toValue: 1,
-    duration: 3000,
-    easing: Easing.linear,
-    useNativeDriver: true
+  constructor() {
+    super()
+    this.animated = new Animated.Value(0);
+    // translateY
+    var snapshot = 50, radius = 100;
+    var inputRange = [], outputRange = [];
+
+    for (var i=0; i<=snapshot; ++i) {
+        var value = i/snapshot;
+        var move = Math.cos(value * Math.PI * 2) * radius;
+
+        inputRange.push(value);
+        outputRange.push(move);
+    }
+    this.translateY = this.animated.interpolate({ inputRange, outputRange });
   }
-).start()
 
-const spin = this.spinValue.interpolate({
-  inputRange: [0, 1],
-  outputRange: ['0deg', '360deg']
-})
+  animate() {
+    this.animated.setValue(0)
+    Animated.timing(this.animated, {
+      toValue: 1,
+      duration: 1500,
+      useNativeDriver: true,
+    }).start();
+  }
+  
+  render() {      
 
-function Coin(props) {
-  return (
-    <View style={[styles.container, props.style]}>
-      
-          <Animated.Image
-          style={{transform: [{rotate: spin}] }}
-          source={{uri: 'https://static.timesofisrael.com/www/uploads/2020/01/Untitled-28.jpg'}} />
+    const spin = this.animated.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '1080deg']});
 
-      <Svg viewBox="0 0 143.00 143.00" style={styles.ellipse}>
-        <Ellipse
-          strokeWidth={17}
-          fill="rgba(255,135,34,1)"
-          stroke="rgba(255,201,0,1)"
-          cx={72}
-          cy={72}
-          rx={63}
-          ry={63}
-        ></Ellipse>
-      </Svg>
+    const transform = [
+      {translateY: this.translateY},
+      {rotateX: spin},
+      {perspective: 1000}]; 
+
+    //const [count, setCount] = useState(0);
+    //const onPress = () => setCount(prevCount => prevCount + 1);
+
+    return (
+      <View style={styles.container}>
+        <Animated.View style={{transform}}>
+         <TouchableOpacity 
+            style={styles.circle}
+            title="Flip" onPress={() => { this.animate() }}>
+            <Text style = {styles.text}>$</Text>
+         </TouchableOpacity>
+        </Animated.View>
     </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {},
-  ellipse: {
-    width: 143,
-    height: 143
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  circle: {
+    width: 100,
+    height: 100,
+    borderRadius: 100/2,
+    borderWidth: 5,
+    borderColor: 'orange',
+    backgroundColor: 'gold',
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  text: {
+    color: 'black',
+    fontSize: 40,
+    fontWeight: "bold"
   }
 });
-
-export default Coin;
