@@ -25,7 +25,7 @@ export default class Coin extends Component{
     this.animated.setValue(0)
     Animated.timing(this.animated, {
       toValue: 1,
-      duration: 1500,
+      duration: 1000,
       useNativeDriver: true,
     }).start();
   }
@@ -34,7 +34,7 @@ export default class Coin extends Component{
 
     const spin = this.animated.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0deg', '1080deg']});
+      outputRange: ['0deg', '4320deg']});
 
     const transform = [
       {translateY: this.translateY},
