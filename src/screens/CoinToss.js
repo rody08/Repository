@@ -5,17 +5,14 @@ import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 
 function CoinToss(props) {
+
   const [text, setText] = useState('');
+
   return (
     <View style={styles.container}>
 
       <View style={styles.coin2Stack}>
         <Coin style={styles.coin2}></Coin>
-
-        <TouchableOpacity
-          //onPress={() => props.navigation.navigate("CoinTossResults")}
-          //style={styles.cashonClick}
-        ></TouchableOpacity>
       </View>
 
       <MaterialHelperTextBox
@@ -31,7 +28,7 @@ function CoinToss(props) {
           defaultValue = {text}/>
       </View>
       
-      <Text style={styles.swipe}>Press the Coin!</Text>
+      <Text style={styles.press}>Press the Coin!</Text>
 
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
@@ -73,16 +70,6 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular"
   },
 
-  cashonClick: {
-    top: 0,
-    left: 0,
-    width: 169,
-    height: 171,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    position: "absolute",
-    opacity: 0
-  },
-
   coin2Stack: {
     width: 169,
     height: 171,
@@ -108,7 +95,7 @@ const styles = StyleSheet.create({
     marginLeft: 115
   },
 
-  swipe: {
+  press: {
     color: "rgba(105,104,104,1)",
     fontSize: 14,
     fontFamily: "roboto-regular",
