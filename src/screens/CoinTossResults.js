@@ -1,16 +1,37 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
-import { render } from "react-three-fiber";
+import Math from 'mathjs';
 
 function CoinTossResults({ navigation }) {
-  
-    return (
+
+  const random = require('random');
+  var spinCount = useState(0);
+  spinCount = navigation.getParam('x');
+  var temp = JSON.stringify(spinCount);
+  var heads = 0;
+  var tails = 0;
+  var rng = 0 ;
+
+  for(var i = 0 ; i < temp ; i++)
+  {
+    rng = random.int(min = 0, max = 100);
+    if ( rng > 50 )
+      heads++;
+    else
+      tails++;
+  }
+
+  return (
+      
     <View style={styles.container}>
 
       <Text style={styles.results}>
-        Result: {JSON.stringify(navigation.getParam('x'))}
+        Spins: {JSON.stringify(spinCount)}{"\n"}
+        RNG: {rng}{"\n"}
+        Heads: {heads}{"\n"}
+        Tails: {tails}
       </Text>
 
       <View style={styles.icon1Stack}>
