@@ -50,7 +50,7 @@ export default function CoinToss({ navigation }) {
         ></CupertinoButtonDanger> 
 
         <TouchableOpacity 
-          onPress = {() => navigation.navigate("CoinTossResults", { x:10 } ) }
+          onPress = {() => navigation.navigate("CoinTossResults", { x:spinCount } ) }
           style={styles.fBonClick}>
         </TouchableOpacity>
 

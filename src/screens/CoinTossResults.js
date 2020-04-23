@@ -16,7 +16,7 @@ function CoinTossResults({ navigation }) {
       <View style={styles.icon1Stack}>
         <Icon name="chevron-left" style={styles.icon1}></Icon>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate("IntroScreen")}
+            onPress={() => navigation.navigate("IntroScreen")}
             style={styles.button2}
           ></TouchableOpacity>
       </View>
