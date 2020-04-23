@@ -28,13 +28,14 @@ function Spinner(props) {
         thumbTintColor= "rgb(255,0,0)"
         minimumTrackTintColor="rgb(128,0,0)"
         maximumTrackTintColor="rgb(255, 255, 255)"
-         onValueChange = { (Red)=> setRed (Red + 1)}>
+        onValueChange = { (Red)=> setRed (Red + 1)}>
       
-        <Text style={styles.NumberofSpins} >
+
+      
+      </Slider>        
+      <Text style={styles.NumberofSpins} >
           Red: {Red} %
         </Text>
-      
-      </Slider>
       {/* Spinner for the color blue */}
       <Slider style={styles.BluesliderElements}
         value = {0}
@@ -45,11 +46,12 @@ function Spinner(props) {
         maximumTrackTintColor="rgb(255, 255, 255)"
          onValueChange = { (Blue)=> setBlue (Blue + 1)}>
       
-        <Text style={styles.NumberofSpins}  >
-          Blue: {Blue} %
-        </Text>
+
       
-      </Slider>
+      </Slider>        
+      <Text style={styles.NumberofSpins}  >
+          Blue: {Blue} %
+      </Text>
       {/* Spinner for the color green*/}
       <Slider style={styles.GreensliderElements}
         value = {0}
@@ -60,11 +62,12 @@ function Spinner(props) {
         maximumTrackTintColor="rgb(255, 255, 255)"
          onValueChange = { (Green)=> setGreen (Green + 1)}>
       
+
+      
+      </Slider>       
         <Text style={styles.NumberofSpins} >
           Green: {Green} %
         </Text>
-      
-      </Slider>
       {/* Spinner for the color yellow */}
       <Slider style={styles.YellowsliderElements}
         value = {0}
@@ -75,11 +78,12 @@ function Spinner(props) {
         maximumTrackTintColor="rgb(255, 255, 255)"
          onValueChange = { (Yellow)=> setYellow (Yellow + 1)}>
       
+        
+      
+      </Slider>
         <Text style={styles.NumberofSpins} >
           Yellow: {Yellow} %
         </Text>
-      
-      </Slider>
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
           text1="Results"

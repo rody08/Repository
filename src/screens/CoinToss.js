@@ -1,41 +1,30 @@
-import React, { Component, useState } from "react";
-import { StyleSheet, View, Text, TextInput, TouchableOpacity,Slider} from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, TouchableOpacity, Slider} from "react-native";
 import Coin from "../components/Coin";
-import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
-import { set } from "react-native-reanimated";
-
-
 
 
   function CoinToss(props) {
 
     const [spinCount , setCount] = useState(0); //set the number of spins to 0 
-  
-  
 
-  return (
-
+    return (
    
-    <View style={styles.container}>
-         
-        
-      
-          <View style={styles.icon1Stack}>
-            <Icon name="chevron-left" style={styles.icon1}></Icon>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("IntroScreen")}
-              style={styles.button2}
-            ></TouchableOpacity>
-          </View>
-          
+    <View style={[styles.container, props.style]}>
+
+      <View style={styles.icon1Stack}>
+        <Icon name="chevron-left" style={styles.icon1}></Icon>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("IntroScreen")}
+          style={styles.button2}
+        ></TouchableOpacity>
+      </View>
       
       <View 
-                style={styles.coin2Stack}>
-                <Coin style={styles.coin2}></Coin>
+        style={styles.coin2Stack}>
+        <Coin style={styles.coin2}></Coin>
       </View>
-  
      
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
@@ -50,22 +39,19 @@ import { set } from "react-native-reanimated";
         ></TouchableOpacity>
       </View>
 
-
-      <Slider style={styles.sliderElements}
-        value = {0}
-        step = {1}
-        maximumValue={99}
-        thumbTintColor= "rgba(248,132,81,1)"
+      <Slider 
+        minimumValue={0}
+        maximumValue={100}
+        thumbTintColor="rgba(248,132,81,1)"
         minimumTrackTintColor="rgba(57, 227, 48,1)"
         maximumTrackTintColor="rgb(255, 255, 255)"
-         onValueChange = { (spinCount)=> setCount (spinCount + 1)}>
-      
-        <Text style={styles.NumberofSpins} >
-          Number of Spins: {spinCount}
-        </Text>
-      
+        style={styles.slider}
+        onValueChange = { (spinCount)=> setCount (spinCount + 1)}>
       </Slider>
 
+      <Text style={styles.NumberofSpins} >
+          Number of Spins: {spinCount}
+      </Text>
     </View>
   );
 }
@@ -158,8 +144,6 @@ const styles = StyleSheet.create({
     opacity: 0.25
   },
   sliderElements:{
-    width:350,
-    alignSelf:"center",
     
   }
 });
