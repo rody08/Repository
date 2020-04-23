@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.9",
+    "@react-native-community/slider": "^2.0.9",
     "@unimodules/core": "~5.1.0",
     "core-js": "^3.6.5",
     "expo": "^37.0.0",
