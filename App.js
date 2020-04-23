@@ -15,19 +15,17 @@ import LoginPage from "./src/screens/LoginPage";
 import SignUpPage from "./src/screens/SignUpPage";
 import LoginSuccess from "./src/screens/LoginSuccess";
 import CoinTossPTR from "./src/screens/CoinTossPTR";
-import Test from "./src/screens/Test"
+
 
 
 const DrawerNavigation = createDrawerNavigator({
   Home: HomeScreen,
-
   CoinToss: CoinToss,
   Spinner: Spinner,
   CoinTossResults: CoinTossResults,
   SpinnerResults: SpinnerResults,
-
   CoinTossPTR: CoinTossPTR,
-  Test:Test,
+
 });
 
 const StackNavigation = createStackNavigator(
@@ -44,7 +42,6 @@ const StackNavigation = createStackNavigator(
     CoinTossResults: CoinTossResults,
     SpinnerResults: SpinnerResults,
     CoinTossPTR: CoinTossPTR,
-    Test:Test,
     LoginSuccess:LoginSuccess
 
   },
