@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, KeyboardAvoidingView,ScrollView, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
 import { PieChart , BarChart, XAxis} from 'react-native-svg-charts'
@@ -38,7 +38,11 @@ function CoinTossResults({ navigation }) {
       key: `pie-${index}`,
     }))
 
-  return (  
+  return ( 
+    
+   
+     
+
     <View style={styles.container}>
       
 
@@ -86,6 +90,8 @@ function CoinTossResults({ navigation }) {
 
 
     </View>
+    
+    
   );
 }
 
@@ -130,7 +136,7 @@ const styles = StyleSheet.create({
   ctrButtonStack: {
     width: 216,
     height: 52,
-    top: 400,
+    top: 300,
     marginLeft: 90
   },
 

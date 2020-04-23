@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View,KeyboardAvoidingView,ScrollView, TouchableOpacity, Text } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 import MaterialFixedLabelTextbox3 from "../components/MaterialFixedLabelTextbox3";
 import MaterialFixedLabelTextbox4 from "../components/MaterialFixedLabelTextbox4";
@@ -10,6 +10,10 @@ import MaterialRightIconTextbox from "../components/MaterialRightIconTextbox";
 
 function SignUpPage(props) {
   return (
+    <KeyboardAvoidingView style = {{flex:1}}
+     behavior = 'height'>
+      <ScrollView>
+
     <View style={styles.container}>
       <View style={styles.rect}>
         <View style={styles.iconStackRow}>
@@ -49,6 +53,8 @@ function SignUpPage(props) {
         <Text style={styles.createAnAccount}>CREATE AN ACCOUNT</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 

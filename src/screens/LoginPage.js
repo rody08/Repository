@@ -1,11 +1,16 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, KeyboardAvoidingView } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 import MaterialFixedLabelTextbox from "../components/MaterialFixedLabelTextbox";
 import MaterialFixedLabelTextbox1 from "../components/MaterialFixedLabelTextbox1";
+import { ScrollView } from "react-native-gesture-handler";
 
 function LoginPage(props) {
   return (
+
+    <KeyboardAvoidingView style = {{flex:1}}
+     behavior = 'height'>
+      <ScrollView>
     <View style={styles.container}>
       <View style={styles.rect}>
         <View style={styles.icon1StackRow}>
@@ -32,6 +37,8 @@ function LoginPage(props) {
         <Text style={styles.logIn2}>LOG-IN</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
