@@ -5,8 +5,6 @@ import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
 
-
-
 function CoinToss(props) {
 
   const [text, setText] = useState('');
