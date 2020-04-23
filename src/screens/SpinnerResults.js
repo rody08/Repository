@@ -9,7 +9,7 @@ function SpinnerResults(props) {
       <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("IntroScreen")}
+              onPress={() => props.navigation.navigate("Spinner")}
               style={styles.button2}
             ></TouchableOpacity>
         </View>

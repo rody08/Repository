@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Animated, StyleSheet, Text, View, Button } from "react-native";
 
 export default class App extends React.Component {
-    
+   /*
     animated = new Animated.Value(0);
       constructor(props) {
           super(props)
@@ -115,5 +115,5 @@ export default class App extends React.Component {
       color: '#333333',
       marginBottom: 5
     }
-  });
+  });*/
 }
