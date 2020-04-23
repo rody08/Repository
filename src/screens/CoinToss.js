@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Slider, FlatList} from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Slider} from "react-native";
 import Coin from "../components/Coin";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
@@ -17,7 +17,7 @@ export default function CoinToss({ navigation }) {
        <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("IntroScreen")}
+              onPress={() => navigation.navigate("IntroScreen")}
               style={styles.button2}
             ></TouchableOpacity> 
       </View>

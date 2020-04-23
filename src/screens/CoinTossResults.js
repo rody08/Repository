@@ -41,8 +41,6 @@ function CoinTossResults({ navigation }) {
   return (  
     <View style={styles.container}>
       
-
-
       {/*Back Button*/}
       <View style={styles.icon1Stack}>
         <Icon name="chevron-left" style={styles.icon1}></Icon>
@@ -54,9 +52,7 @@ function CoinTossResults({ navigation }) {
 
 
       {/*Create a pie chart to display Data*/}
-      <PieChart style={styles.PieChart} data={pieData} 
-          
-      /> 
+      <PieChart style={styles.PieChart} data={pieData}/> 
 
       <Text style={styles.results}>
         Spins: {JSON.stringify(spinCount)}{"\n"}
