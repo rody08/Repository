@@ -2,18 +2,25 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
+import { render } from "react-three-fiber";
 
-function CoinTossResults(props) {
-  return (
+function CoinTossResults({ navigation }) {
+  
+    return (
     <View style={styles.container}>
 
-          <View style={styles.icon1Stack}>
-            <Icon name="chevron-left" style={styles.icon1}></Icon>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("IntroScreen")}
-              style={styles.button2}
-            ></TouchableOpacity>
-          </View>
+      <Text style={styles.results}>
+        Result: {JSON.stringify(navigation.getParam('x'))}
+      </Text>
+
+      <View style={styles.icon1Stack}>
+        <Icon name="chevron-left" style={styles.icon1}></Icon>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("IntroScreen")}
+            style={styles.button2}
+          ></TouchableOpacity>
+      </View>
+
       <View style={styles.headsRow}>
         <Text style={styles.heads}> Heads </Text>
         <Text style={styles.tails}> Tails </Text>
@@ -25,15 +32,18 @@ function CoinTossResults(props) {
       </View>
 
       <View style={styles.ctrButtonStack}>
+
         <CupertinoButtonDanger
           text1="Play Again"
           button1="CoinToss"
           style={styles.ctrButton}
         ></CupertinoButtonDanger>
+
         <TouchableOpacity
-          onPress={() => props.navigation.navigate("CoinToss")}
+          onPress={() => navigation.navigate("CoinToss")}
           style={styles.ctRonClick}
         ></TouchableOpacity>
+
       </View>
 
       <View style={styles.rect2}>
@@ -53,6 +63,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(143, 216, 255,1)"
+  },
+
+  results: {
+    top:200,
+    fontSize:20,
+    fontFamily: "aldrich-regular",
+
   },
 
   heads: {

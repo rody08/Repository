@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
-import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 
 function IntroScreen(props) {
   return (
@@ -22,8 +21,6 @@ function IntroScreen(props) {
       </Image>
       </TouchableOpacity>
 
-   
-      
 
     </View>
   );
