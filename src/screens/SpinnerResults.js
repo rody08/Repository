@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
 
-function SpinnerResults(props, {navigation}) {
+function SpinnerResults({navigation}) {
   return (
     <View style={styles.container}>
 
@@ -11,7 +11,7 @@ function SpinnerResults(props, {navigation}) {
       <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("Spinner")}
+              onPress={() => navigation.navigate("Spinner")}
               style={styles.button2}
             ></TouchableOpacity>
         </View>
@@ -28,7 +28,7 @@ function SpinnerResults(props, {navigation}) {
         ></CupertinoButtonDanger>
 
         <TouchableOpacity
-          onPress={() => props.navigation.navigate("Spinner")}
+          onPress={() => navigation.navigate("Spinner")}
           style={styles.sRonClick}
         ></TouchableOpacity>
 

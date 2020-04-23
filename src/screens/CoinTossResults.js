@@ -36,27 +36,22 @@ function CoinTossResults({ navigation }) {
           onPress: () => console.log('press', index),
       },
       key: `pie-${index}`,
-    }))
+  }))
 
   return (  
     <View style={styles.container}>
       
-
-
       {/*Back Button*/}
       <View style={styles.icon1Stack}>
         <Icon name="chevron-left" style={styles.icon1}></Icon>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("CoinToss")}
-            style={styles.button2}
-          ></TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("CoinToss")}
+          style={styles.button2}
+        ></TouchableOpacity>
       </View>
 
-
       {/*Create a pie chart to display Data*/}
-      <PieChart style={styles.PieChart} data={pieData} 
-          
-      /> 
+      <PieChart style={styles.PieChart} data={pieData}/> 
 
       <Text style={styles.results}>
         Spins: {JSON.stringify(spinCount)}{"\n"}
@@ -65,25 +60,20 @@ function CoinTossResults({ navigation }) {
         Tails: {tails}
       </Text>
 
-    
       {/*Create a bar graph representing the data*/}
      
       {/*Play Again Button*/}
       <View style={styles.ctrButtonStack}>
-
         <CupertinoButtonDanger
           text1="Play Again"
           button1="CoinToss"
           style={styles.ctrButton}
         ></CupertinoButtonDanger>
-
         <TouchableOpacity
           onPress={() => navigation.navigate("CoinToss")}
           style={styles.ctRonClick}
         ></TouchableOpacity>
-
       </View>
-
 
     </View>
   );
@@ -127,6 +117,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0
   },
+
   ctrButtonStack: {
     width: 216,
     height: 52,
@@ -134,13 +125,12 @@ const styles = StyleSheet.create({
     marginLeft: 90
   },
 
-  
-
   //Back button 
   icon1Stack: {
     width: 43,
     height: 47
   },
+
   icon1: {
     top: 50,
     left: 10,
@@ -150,6 +140,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40
   },
+
   button2: {
     top: 50,
     left: 10,
@@ -159,7 +150,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0.25
   },
-
 });
 
 export default CoinTossResults;
