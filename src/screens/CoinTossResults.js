@@ -2,25 +2,72 @@ import React, { Component, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
-//import the coin toss data 
+import { PieChart } from 'react-native-svg-charts'
 
+function CoinTossResults({ navigation }) {
 
-function CoinTossResults(props, {navigation}) {
- 
-  return (
-      
+  const random = require('random');
+  var spinCount = useState(0);
+  spinCount = navigation.getParam('x');
+  var temp = JSON.stringify(spinCount);
+  var heads = 0;
+  var tails = 0;
+  var rng = 0 ;
+
+  for(var i = 0 ; i < temp ; i++)
+  {
+    rng = random.int(min = 0, max = 100);
+    if ( rng > 49 )
+      heads++;
+    else
+      tails++;
+  }
+
+  const data = [heads,tails]
+
+  const randomColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7)
+
+  const pieData = data
+  .filter((value) => value > 0)
+  .map((value, index) => ({
+      value,
+      svg: {
+          fill: randomColor(),
+          onPress: () => console.log('press', index),
+      },
+      key: `pie-${index}`,
+    }))
+
+  return (  
     <View style={styles.container}>
-          {/*Back button*/}
-          <View style={styles.icon1Stack}>
-            <Icon name="chevron-left" style={styles.icon1}></Icon>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("CoinToss")}
-              style={styles.button2}
-            ></TouchableOpacity>
-          </View>
-      <Text> Number of Spins: {navigation.getParam('spinCount') } </Text>
       
-      {/*Play again button*/}
+      <PieChart style={{ height: 200 }} data={pieData} /> 
+
+      <Text style={styles.results}>
+        Spins: {JSON.stringify(spinCount)}{"\n"}
+        RNG: {rng}{"\n"}
+        Heads: {heads}{"\n"}
+        Tails: {tails}
+      </Text>
+
+      <View style={styles.icon1Stack}>
+        <Icon name="chevron-left" style={styles.icon1}></Icon>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("IntroScreen")}
+            style={styles.button2}
+          ></TouchableOpacity>
+      </View>
+
+      <View style={styles.headsRow}>
+        <Text style={styles.heads}> Heads </Text>
+        <Text style={styles.tails}> Tails </Text>
+      </View>
+
+      <View style={styles.rectHeadsRow}>
+        <View style={styles.rectHeads}></View>
+        <View style={styles.rectTails}></View>
+      </View>
+
       <View style={styles.ctrButtonStack}>
 
         <CupertinoButtonDanger
@@ -51,7 +98,6 @@ const styles = StyleSheet.create({
     top:200,
     fontSize:20,
     fontFamily: "aldrich-regular",
-
   },
 
   heads: {
