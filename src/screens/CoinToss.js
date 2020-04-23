@@ -15,11 +15,11 @@ export default function CoinToss({ navigation }) {
 
       {/*Back Button */}
        <View style={styles.icon1Stack}>
-            <Icon name="chevron-left" style={styles.icon1}></Icon>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("IntroScreen")}
-              style={styles.button2}
-            ></TouchableOpacity> 
+          <Icon name="chevron-left" style={styles.icon1}></Icon>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("IntroScreen")}
+            style={styles.button2}
+          ></TouchableOpacity> 
       </View>
      
       {/*Coin Attributes */}
@@ -122,8 +122,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 100
   },
-
-
   //back button Style
   icon1Stack: {
     width: 43,
