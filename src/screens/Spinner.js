@@ -41,7 +41,7 @@ function Spinner(props) {
         step = {1}
         maximumValue={99}
         thumbTintColor= "rgb(0, 0, 255)"
-        minimumTrackTintColor="rgb(0, 128, 128)"
+        minimumTrackTintColor="0, 0, 255"
         maximumTrackTintColor="rgb(255, 255, 255)"
          onValueChange = { (Blue)=> setBlue (Blue + 1)}>
       

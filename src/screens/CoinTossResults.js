@@ -2,28 +2,24 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
+//import the coin toss data 
 
-function CoinTossResults(props) {
+
+function CoinTossResults(props, {navigation}) {
+ 
   return (
     <View style={styles.container}>
-
+          {/*Back button*/}
           <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("IntroScreen")}
+              onPress={() => props.navigation.navigate("CoinToss")}
               style={styles.button2}
             ></TouchableOpacity>
           </View>
-      <View style={styles.headsRow}>
-        <Text style={styles.heads}> Heads </Text>
-        <Text style={styles.tails}> Tails </Text>
-      </View>
-
-      <View style={styles.rectHeadsRow}>
-        <View style={styles.rectHeads}></View>
-        <View style={styles.rectTails}></View>
-      </View>
-
+      <Text> Number of Spins: {navigation.getParam('spinCount') } </Text>
+      
+      {/*Play again button*/}
       <View style={styles.ctrButtonStack}>
         <CupertinoButtonDanger
           text1="Play Again"
@@ -36,14 +32,6 @@ function CoinTossResults(props) {
         ></TouchableOpacity>
       </View>
 
-      <View style={styles.rect2}>
-        <Text style={styles.htResults}>
-          The results are:
-          {"\n"} 
-          {"\n"} 50% Heads
-          {"\n"} 50% Tails
-        </Text>
-      </View>
 
     </View>
   );
@@ -54,63 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(143, 216, 255,1)"
   },
-
-  heads: {
-    color: "rgba(66,66,66,1)",
-    fontSize: 14,
-    fontFamily: "aldrich-regular"
-  },
-
-  tails: {
-    color: "rgba(66,66,66,1)",
-    fontSize: 14,
-    fontFamily: "aldrich-regular",
-    marginLeft: 25
-  },
-
-  headsRow: {
-    height: 15,
-    flexDirection: "row",
-    marginTop: 75,
-    marginLeft: 130,
-    marginRight: 135
-  },
-
-  rectHeads: {
-    width: 30,
-    height: 115,
-    backgroundColor: "rgba(255,0,0,1)",
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1
-  },
-
-  rectTails: {
-    width: 30,
-    height: 115,
-    backgroundColor: "rgba(29,15,181,1)",
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1,
-    marginLeft: 60
-  },
-
-  rectHeadsRow: {
-    height: 116,
-    flexDirection: "row",
-    marginTop: 17,
-    marginLeft: 133,
-    marginRight: 137
-  },
-
+  
   ctrButton: {
     top: 0,
     left: 0,
@@ -119,13 +51,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1
   },
 
   ctRonClick: {
@@ -140,32 +65,13 @@ const styles = StyleSheet.create({
   ctrButtonStack: {
     width: 216,
     height: 52,
-    marginTop: 400,
+    top: 640,
     marginLeft: 90
   },
 
-  rect2: {
-    width: 259,
-    height: 186,
-    backgroundColor: "rgba(255, 255, 255,1)",
-    borderRadius: 33,
-    borderColor: "rgba(255, 151, 0,1)",
-    borderWidth: 3,
-    
-    elevation: 10,
-    shadowColor: 'black',
- 
-    marginTop: -375,
-    marginLeft: 65
-  },
+  
 
-  htResults: {
-    color: "rgba(66,66,66,1)",
-    fontSize: 26,
-    fontFamily: "roboto-regular",
-    marginTop: 30,
-    marginLeft: 33
-  },
+  //Back button 
   icon1Stack: {
     width: 43,
     height: 47

@@ -9,7 +9,7 @@ import { set } from "react-native-reanimated";
 
 
 
-  function CoinToss(props) {
+  function CoinToss(props, {navigation}) {
 
     const [spinCount , setCount] = useState(0); //set the number of spins to 0 
   
@@ -21,7 +21,7 @@ import { set } from "react-native-reanimated";
     <View style={styles.container}>
          
         
-      
+      {/*Back button*/}
           <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
@@ -45,8 +45,9 @@ import { set } from "react-native-reanimated";
         ></CupertinoButtonDanger>
 
         <TouchableOpacity
-          onPress={() => props.navigation.navigate("CoinTossResults")}
+          onPress={() => props.navigation.navigate("CoinTossResults", spinCount)}
           style={styles.fBonClick}
+          
         ></TouchableOpacity>
       </View>
 
@@ -58,12 +59,14 @@ import { set } from "react-native-reanimated";
         thumbTintColor= "rgba(248,132,81,1)"
         minimumTrackTintColor="rgba(57, 227, 48,1)"
         maximumTrackTintColor="rgb(255, 255, 255)"
-         onValueChange = { (spinCount)=> setCount (spinCount + 1)}>
+         onValueChange = { (spinCount)=> setCount (spinCount + 1)} 
+         >
       
-        <Text style={styles.NumberofSpins} >
+        <Text style={styles.NumberofSpins}  >
           Number of Spins: {spinCount}
         </Text>
-      
+       
+        
       </Slider>
 
     </View>
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
   NumberofSpins:
   {
       fontSize: 20,
-      top: -50,
+      top: -40,
       fontFamily: "roboto-regular",
       color: "rgba(255,255,255,1)",
   },
@@ -102,8 +105,9 @@ const styles = StyleSheet.create({
   coin2Stack: {
     width: 169,
     height: 171,
-    marginTop: 0,
-    marginLeft: 100
+    marginTop: 40,
+    marginLeft: 100,
+    top: 50
   },
 
 
@@ -160,7 +164,7 @@ const styles = StyleSheet.create({
   sliderElements:{
     width:350,
     alignSelf:"center",
-    
+    top: 50
   }
 });
 
