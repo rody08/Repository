@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
-import Math from 'mathjs';
+import { PieChart } from 'react-native-svg-charts'
 
 function CoinTossResults({ navigation }) {
 
@@ -17,15 +17,31 @@ function CoinTossResults({ navigation }) {
   for(var i = 0 ; i < temp ; i++)
   {
     rng = random.int(min = 0, max = 100);
-    if ( rng > 50 )
+    if ( rng > 49 )
       heads++;
     else
       tails++;
   }
 
-  return (
-      
+  const data = [heads,tails]
+
+  const randomColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7)
+
+  const pieData = data
+  .filter((value) => value > 0)
+  .map((value, index) => ({
+      value,
+      svg: {
+          fill: randomColor(),
+          onPress: () => console.log('press', index),
+      },
+      key: `pie-${index}`,
+    }))
+
+  return (  
     <View style={styles.container}>
+      
+      <PieChart style={{ height: 200 }} data={pieData} /> 
 
       <Text style={styles.results}>
         Spins: {JSON.stringify(spinCount)}{"\n"}
@@ -90,7 +106,6 @@ const styles = StyleSheet.create({
     top:200,
     fontSize:20,
     fontFamily: "aldrich-regular",
-
   },
 
   heads: {
