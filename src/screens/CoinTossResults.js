@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
@@ -8,6 +8,7 @@ import Icon from "react-native-vector-icons/Entypo";
 function CoinTossResults(props, {navigation}) {
  
   return (
+      
     <View style={styles.container}>
           {/*Back button*/}
           <View style={styles.icon1Stack}>
@@ -21,15 +22,18 @@ function CoinTossResults(props, {navigation}) {
       
       {/*Play again button*/}
       <View style={styles.ctrButtonStack}>
+
         <CupertinoButtonDanger
           text1="Play Again"
           button1="CoinToss"
           style={styles.ctrButton}
         ></CupertinoButtonDanger>
+
         <TouchableOpacity
-          onPress={() => props.navigation.navigate("CoinToss")}
+          onPress={() => navigation.navigate("CoinToss")}
           style={styles.ctRonClick}
         ></TouchableOpacity>
+
       </View>
 
 
@@ -42,7 +46,70 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(143, 216, 255,1)"
   },
-  
+
+  results: {
+    top:200,
+    fontSize:20,
+    fontFamily: "aldrich-regular",
+
+  },
+
+  heads: {
+    color: "rgba(66,66,66,1)",
+    fontSize: 14,
+    fontFamily: "aldrich-regular"
+  },
+
+  tails: {
+    color: "rgba(66,66,66,1)",
+    fontSize: 14,
+    fontFamily: "aldrich-regular",
+    marginLeft: 25
+  },
+
+  headsRow: {
+    height: 15,
+    flexDirection: "row",
+    marginTop: 75,
+    marginLeft: 130,
+    marginRight: 135
+  },
+
+  rectHeads: {
+    width: 30,
+    height: 115,
+    backgroundColor: "rgba(255,0,0,1)",
+    shadowOffset: {
+      height: 20,
+      width: 20
+    },
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1
+  },
+
+  rectTails: {
+    width: 30,
+    height: 115,
+    backgroundColor: "rgba(29,15,181,1)",
+    shadowOffset: {
+      height: 20,
+      width: 20
+    },
+    elevation: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    marginLeft: 60
+  },
+
+  rectHeadsRow: {
+    height: 116,
+    flexDirection: "row",
+    marginTop: 17,
+    marginLeft: 133,
+    marginRight: 137
+  },
+
   ctrButton: {
     top: 0,
     left: 0,
