@@ -1,19 +1,26 @@
 import React, { Component, useState } from "react";
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TextInput, TouchableOpacity,Slider} from "react-native";
 import Coin from "../components/Coin";
 import MaterialHelperTextBox from "../components/MaterialHelperTextBox";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
+import { set } from "react-native-reanimated";
 
 
 
-function CoinToss(props) {
 
-  const [text, setText] = useState('');
+  function CoinToss(props) {
+
+    const [spinCount , setCount] = useState(0); //set the number of spins to 0 
+  
+  
 
   return (
+
+   
     <View style={styles.container}>
-    
+         
+        
       
           <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
@@ -23,38 +30,41 @@ function CoinToss(props) {
             ></TouchableOpacity>
           </View>
           
-        
-      <View style={styles.coin2Stack}>
-        <Coin style={styles.coin2}></Coin>
-      </View>
-
-      <MaterialHelperTextBox
-        text1="How many flips?"
-        style={styles.flipInput}
-      ></MaterialHelperTextBox>
-
-      <View style={{padding: 10}}>
-        <TextInput
-          style = {{height:40}}
-          placeholder = "Input"
-          onChangeText = {text => setText(text)}
-          defaultValue = {text}/>
-      </View>
       
-      <Text style={styles.press}>Press the Coin!</Text>
-
+      <View 
+                style={styles.coin2Stack}>
+                <Coin style={styles.coin2}></Coin>
+      </View>
+  
+     
       <View style={styles.cTflipStack}>
         <CupertinoButtonDanger
-          text1="Results!"
+          text1="Results"
           button1="CoinTossResults"
           style={styles.cTflip}
         ></CupertinoButtonDanger>
-        
+
         <TouchableOpacity
           onPress={() => props.navigation.navigate("CoinTossResults")}
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>
+
+
+      <Slider style={styles.sliderElements}
+        value = {0}
+        step = {1}
+        maximumValue={99}
+        thumbTintColor= "rgba(248,132,81,1)"
+        minimumTrackTintColor="rgba(57, 227, 48,1)"
+        maximumTrackTintColor="rgb(255, 255, 255)"
+         onValueChange = { (spinCount)=> setCount (spinCount + 1)}>
+      
+        <Text style={styles.NumberofSpins} >
+          Number of Spins: {spinCount}
+        </Text>
+      
+      </Slider>
 
     </View>
   );
@@ -65,7 +75,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(143, 216, 255,1)"
   },
-
+  NumberofSpins:
+  {
+      fontSize: 20,
+      top: -50,
+      fontFamily: "roboto-regular",
+      color: "rgba(255,255,255,1)",
+  },
   coin2: {
     top: 20,
     left: 21,
@@ -86,55 +102,24 @@ const styles = StyleSheet.create({
   coin2Stack: {
     width: 169,
     height: 171,
-    marginTop: 131,
+    marginTop: 0,
     marginLeft: 100
   },
 
-  flipInput: {
-    width: 147,
-    height: 85,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    borderColor: "rgba(255, 151, 0,1)",
-    borderWidth: 3,
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1,
-    marginTop: 197,
-    marginLeft: 115
-  },
-
-  press: {
-    color: "rgba(105,104,104,1)",
-    fontSize: 14,
-    fontFamily: "roboto-regular",
-    marginTop: -180,
-    alignSelf: "center"
-  },
 
   cTflip: {
-    top: 0,
+    top: 220,
     left: 0,
     width: 209,
     height: 52,
     backgroundColor: "rgba(57, 227, 48,1)",
     position: "absolute",
     borderRadius: 100,
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    shadowColor: 'black',
-    elevation: 10,
-    shadowOpacity: 1
+    
   },
 
   fBonClick: {
-    top: 0,
+    top: 220,
     left: 2,
     width: 209,
     height: 52,
@@ -172,6 +157,11 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0.25
   },
+  sliderElements:{
+    width:350,
+    alignSelf:"center",
+    
+  }
 });
 
 export default CoinToss;
