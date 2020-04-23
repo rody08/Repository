@@ -13,25 +13,28 @@ export default function CoinToss({ navigation }) {
    
     <View style={styles.container}>
 
-      <View style={styles.icon1Stack}>
-        <Icon name="chevron-left" style={styles.icon1}></Icon>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("CoinTossResults", spinCount)}
-          style={styles.fBonClick}
-        ></TouchableOpacity>
+      {/*Back Button */}
+       <View style={styles.icon1Stack}>
+            <Icon name="chevron-left" style={styles.icon1}></Icon>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("IntroScreen")}
+              style={styles.button2}
+            ></TouchableOpacity> 
       </View>
-      
+     
+      {/*Coin Attributes */}
       <View style={styles.coinStack}>
-        <Coin 
-          style={styles.coin}>
-        </Coin>
+          <Coin 
+            style={styles.coin}>
+          </Coin>
       </View>
-
+      {/*Number of Spins text */}
       <Text style={styles.NumberofSpins}>
         Number of Spins: {spinCount}      
       </Text> 
-
-      <Slider style={styles.slider}
+     
+      {/*Slider*/}
+      <Slider style={styles.sliderElements}
         value = {0}
         step = {1}
         maximumValue={99}
@@ -41,6 +44,7 @@ export default function CoinToss({ navigation }) {
         onValueChange = { (spinCount) => setCount (spinCount + 1)}>
       </Slider>  
 
+      {/*Results Button*/}
       <View style={styles.cTflipStack}> 
 
         <CupertinoButtonDanger
@@ -70,11 +74,12 @@ const styles = StyleSheet.create({
   NumberofSpins:
   {
     fontSize: 20,
-    top: 150,
+    top: 165,
     fontFamily: "roboto-regular",
     color: "rgba(255,255,255,1)",
+    alignSelf: "center"
   },
-
+//Coint Style
   coin: {
     top: 20,
     left: 21,
@@ -90,7 +95,7 @@ const styles = StyleSheet.create({
     marginLeft: 100,
     top: 50
   },
-
+//Results Button Style
   cTflip: {
     top: 220,
     left: 0,
@@ -107,7 +112,7 @@ const styles = StyleSheet.create({
     marginTop: 160,
     marginLeft: 90
   },
-
+  
   fBonClick: {
     top: 220,
     left: 2,
@@ -118,11 +123,13 @@ const styles = StyleSheet.create({
     opacity: 100
   },
 
+
+  //back button Style
   icon1Stack: {
     width: 43,
     height: 47
   },
-
+   
   icon1: {
     top: 50,
     left: 10,
@@ -142,11 +149,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0.25
   },
-
+  //Slider Style
   sliderElements:{
-    elevation: 10,
     width:350,
     alignSelf:"center",
-    top : 500
+    top : 180
   }
 });

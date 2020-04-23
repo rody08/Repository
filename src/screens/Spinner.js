@@ -12,6 +12,7 @@ function Spinner(props) {
   return (
     <View style={styles.container}>
       
+      {/*Back Button */}
       <View style={styles.icon1Stack}>
             <Icon name="chevron-left" style={styles.icon1}></Icon>
             <TouchableOpacity
@@ -33,7 +34,7 @@ function Spinner(props) {
 
       
       </Slider>        
-      <Text style={styles.NumberofSpins} >
+      <Text style={styles.ColorSize} >
           Red: {Red} %
         </Text>
       {/* Spinner for the color blue */}
@@ -49,7 +50,7 @@ function Spinner(props) {
 
       
       </Slider>        
-      <Text style={styles.NumberofSpins}  >
+      <Text style={styles.ColorSize}  >
           Blue: {Blue} %
       </Text>
       {/* Spinner for the color green*/}
@@ -65,7 +66,7 @@ function Spinner(props) {
 
       
       </Slider>       
-        <Text style={styles.NumberofSpins} >
+        <Text style={styles.ColorSize} >
           Green: {Green} %
         </Text>
       {/* Spinner for the color yellow */}
@@ -81,7 +82,7 @@ function Spinner(props) {
         
       
       </Slider>
-        <Text style={styles.NumberofSpins} >
+        <Text style={styles.ColorSize} >
           Yellow: {Yellow} %
         </Text>
       <View style={styles.cTflipStack}>
@@ -166,34 +167,35 @@ const styles = StyleSheet.create({
   RedsliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 490,
   },
   BluesliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 490,
   },
   GreensliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 490,
   },
   YellowsliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 490,
   },
   //slider text 
-  NumberofSpins:
+  ColorSize:
   {
       fontSize: 15,
-      top: - 9,
+      top: 433,
       fontFamily: "roboto-regular",
       color: "rgba(255,255,255,1)",
+      left: 10
   },
   //results button elements 
   cTflip: {
-    top: 390,
+    top: 320,
     left: 0,
     width: 209,
     height: 52,
@@ -211,7 +213,7 @@ const styles = StyleSheet.create({
   },
 
   fBonClick: {
-    top: 390,
+    top: 320,
     left: 2,
     width: 209,
     height: 52,

@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
-import { PieChart } from 'react-native-svg-charts'
+import { PieChart , BarChart, XAxis} from 'react-native-svg-charts'
 
 function CoinTossResults({ navigation }) {
 
@@ -41,7 +41,22 @@ function CoinTossResults({ navigation }) {
   return (  
     <View style={styles.container}>
       
-      <PieChart style={{ height: 200 }} data={pieData} /> 
+
+
+      {/*Back Button*/}
+      <View style={styles.icon1Stack}>
+        <Icon name="chevron-left" style={styles.icon1}></Icon>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("CoinToss")}
+            style={styles.button2}
+          ></TouchableOpacity>
+      </View>
+
+
+      {/*Create a pie chart to display Data*/}
+      <PieChart style={styles.PieChart} data={pieData} 
+          
+      /> 
 
       <Text style={styles.results}>
         Spins: {JSON.stringify(spinCount)}{"\n"}
@@ -50,24 +65,10 @@ function CoinTossResults({ navigation }) {
         Tails: {tails}
       </Text>
 
-      <View style={styles.icon1Stack}>
-        <Icon name="chevron-left" style={styles.icon1}></Icon>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("IntroScreen")}
-            style={styles.button2}
-          ></TouchableOpacity>
-      </View>
-
-      <View style={styles.headsRow}>
-        <Text style={styles.heads}> Heads </Text>
-        <Text style={styles.tails}> Tails </Text>
-      </View>
-
-      <View style={styles.rectHeadsRow}>
-        <View style={styles.rectHeads}></View>
-        <View style={styles.rectTails}></View>
-      </View>
-
+    
+      {/*Create a bar graph representing the data*/}
+     
+      {/*Play Again Button*/}
       <View style={styles.ctrButtonStack}>
 
         <CupertinoButtonDanger
@@ -91,70 +92,21 @@ function CoinTossResults({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(143, 216, 255,1)"
+    backgroundColor: "rgba(248,132,81,1)"
   },
 
   results: {
-    top:200,
+    top:100,
     fontSize:20,
     fontFamily: "aldrich-regular",
+    alignSelf: "center"
   },
 
-  heads: {
-    color: "rgba(66,66,66,1)",
-    fontSize: 14,
-    fontFamily: "aldrich-regular"
-  },
-
-  tails: {
-    color: "rgba(66,66,66,1)",
-    fontSize: 14,
-    fontFamily: "aldrich-regular",
-    marginLeft: 25
-  },
-
-  headsRow: {
-    height: 15,
-    flexDirection: "row",
-    marginTop: 75,
-    marginLeft: 130,
-    marginRight: 135
-  },
-
-  rectHeads: {
-    width: 30,
-    height: 115,
-    backgroundColor: "rgba(255,0,0,1)",
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1
-  },
-
-  rectTails: {
-    width: 30,
-    height: 115,
-    backgroundColor: "rgba(29,15,181,1)",
-    shadowOffset: {
-      height: 20,
-      width: 20
-    },
-    elevation: 10,
-    shadowColor: 'black',
-    shadowOpacity: 1,
-    marginLeft: 60
-  },
-
-  rectHeadsRow: {
-    height: 116,
-    flexDirection: "row",
-    marginTop: 17,
-    marginLeft: 133,
-    marginRight: 137
-  },
+ PieChart:
+ {
+      height: 200,
+      top: 70
+ },
 
   ctrButton: {
     top: 0,
@@ -178,7 +130,7 @@ const styles = StyleSheet.create({
   ctrButtonStack: {
     width: 216,
     height: 52,
-    top: 640,
+    top: 400,
     marginLeft: 90
   },
 
