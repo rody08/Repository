@@ -4,6 +4,7 @@ import { Animated, StyleSheet, Text, TouchableOpacity, View,Image } from "react-
 const backgroundImage = require('/Users/elwjaramillo/Documents/GitHub/Repository/Repository-1/src/assets/images/pointer.png')
 
 
+
 export default class SpinnerComponent extends Component{
 
   constructor() {
@@ -43,9 +44,9 @@ export default class SpinnerComponent extends Component{
             resizeMode='cover'
             style={{
                 position: 'absolute',
-                alignItems: "center",
-                justifyContent: "center",
-                top: 100,
+                justifyContent: 'center',
+                alignItems: 'center',
+                top: 10,
                 height: 300,
                 width: 300,
                 transform: [{
