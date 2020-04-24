@@ -1,9 +1,53 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
+import { PieChart , BarChart, XAxis} from 'react-native-svg-charts'
 
 function SpinnerResults({navigation}) {
+
+  const random = require('random');
+
+  var temp = useState(0);
+  temp = navigation.getParam('red');
+
+  var totalSpins = JSON.stringify(temp);
+
+  var red = 0;
+  var blue = 0;
+  var green = 0;
+  var yellow = 0;
+
+  var rng = 0 ;
+
+  for(var i = 0 ; i < totalSpins ; i++)
+  {
+    rng = random.int(min = 1, max = 101);
+
+    if ( rng > 75 )
+      red++;
+    else if ( rng > 50 && rng <= 75 )
+      blue++;
+    else if ( rng > 25 && rng <= 50 )
+      green++;
+    else
+      yellow++;
+  }
+
+  const data = [ red, blue, green, yellow ];
+
+  const randomColor = () => ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(0, 7);
+
+  const pieData = data
+  .filter((value) => value > 0)
+  .map((value, index) => ({
+      value,
+      svg: {
+          fill: randomColor(),
+          onPress: () => console.log('press', index),
+      },
+      key: `pie-${index}`,
+  }))
 
   return (
 
@@ -17,6 +61,16 @@ function SpinnerResults({navigation}) {
               style={styles.button2}
             ></TouchableOpacity>
         </View>
+
+      {/*Create a pie chart to display Data*/}
+      <PieChart style={styles.PieChart} data={pieData}/> 
+
+      <Text style={styles.results}>
+        Red: {red}{"\n"}
+        Blue: {blue}{"\n"}
+        Green: {green}{"\n"}
+        Yellow: {yellow}
+      </Text>
 
       {/*Play Again Button*/}
       <View style={styles.srButtonStack}>
@@ -42,7 +96,20 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(143, 216, 255,1)"
   },
 
-//Play Again Button Style
+  results: {
+    top:100,
+    fontSize:20,
+    fontFamily: "aldrich-regular",
+    alignSelf: "center"
+  },
+
+ PieChart:
+ {
+      height: 200,
+      top: 70
+ },
+
+  //Play Again Button Style
   srButton: {
     top: 0,
     left: 0,
@@ -85,7 +152,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40
   },
-  
+
   button2: {
     top: 50,
     left: 10,

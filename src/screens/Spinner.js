@@ -8,9 +8,6 @@ function Spinner({ navigation }) {
 
   //Declare all of the variable to hold the color size 
   const [Red, setRed] = useState(0)
-  const [Blue, setBlue] = useState(0) 
-  const [Green, setGreen] = useState(0)
-  const [Yellow, setYellow ]= useState(0)
 
   return (
     <View style={styles.container}>
@@ -43,52 +40,7 @@ function Spinner({ navigation }) {
         onValueChange = { (Red)=> setRed (Red + 1)}>
       </Slider>   
       <Text style={styles.NumberofSpins} >
-        Red: {Red} %
-      </Text>
-      
-      {/* Spinner for the color blue */}
-      <Slider 
-        style={styles.BluesliderElements}
-        value = {0}
-        step = {1}
-        maximumValue={99}
-        thumbTintColor= "rgb(0, 0, 255)"
-        minimumTrackTintColor="rgb(0, 128, 128)"
-        maximumTrackTintColor="rgb(255, 255, 255)"
-        onValueChange = { (Blue)=> setBlue (Blue + 1)}>
-      </Slider>        
-      <Text style={styles.NumberofSpins}  >
-        Blue: {Blue} %
-      </Text>
-
-      {/* Spinner for the color green*/}
-      <Slider 
-        style={styles.GreensliderElements}
-        value = {0}
-        step = {1}
-        maximumValue={99}
-        thumbTintColor= "rgb(0, 128, 0)"
-        minimumTrackTintColor="rgba(57, 227, 48,1)"
-        maximumTrackTintColor="rgb(255, 255, 255)"
-        onValueChange = { (Green)=> setGreen (Green + 1)}>
-      </Slider>       
-      <Text style={styles.NumberofSpins} >
-        Green: {Green} %
-      </Text>
-
-      {/* Spinner for the color yellow */}
-      <Slider 
-        style={styles.YellowsliderElements}
-        value = {0}
-        step = {1}
-        maximumValue={99}
-        thumbTintColor= "rgb(255,255,0)"
-        minimumTrackTintColor="rgb(255,255,51)"
-        maximumTrackTintColor="rgb(255, 255, 255)"
-        onValueChange = { (Yellow)=> setYellow (Yellow + 1)}>
-      </Slider>
-      <Text style={styles.NumberofSpins} >
-        Yellow: {Yellow} %
+        Number of Spins: {Red}
       </Text>
 
       {/* Results Button */}
@@ -98,7 +50,7 @@ function Spinner({ navigation }) {
           style={styles.cTflip}
         ></CupertinoButtonDanger>
         <TouchableOpacity
-          onPress={() => navigation.navigate("SpinnerResults",{Red,Yellow,Green,Blue})}
+          onPress={() => navigation.navigate("SpinnerResults",{Red})}
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>
@@ -175,7 +127,6 @@ const styles = StyleSheet.create({
     width: 43,
     height: 47,
     backgroundColor: "rgba(230, 230, 230,1)",
-    position: "absolute",
     opacity: 0.25
   },
 
