@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React, { Component,useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
 
 function SpinnerResults({navigation}) {
+
+  /*var Red = useState(0);
+  var Blue = useState(0);
+  var Green = useState(0); 
+  var Yellow = useState(0); 
+  Red = navigation.getParam('r'); 
+  Blue = navigation.getParam('b');
+  Green = navigation.getParam('g'); 
+  Yellow = navigation.getParam('y'); */
   return (
     <View style={styles.container}>
 
@@ -15,7 +24,11 @@ function SpinnerResults({navigation}) {
               style={styles.button2}
             ></TouchableOpacity>
         </View>
-     
+      
+      <Text>
+      
+      </Text>
+      
       
 
       {/*Play Again Button*/}

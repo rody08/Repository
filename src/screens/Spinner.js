@@ -6,10 +6,10 @@ import Icon from "react-native-vector-icons/Entypo";
 function Spinner({navigation}) {
 
   //Declare all of the variable to hold the color size 
-  const [Red, setRed] = useState(0)
-  const [Blue, setBlue] = useState(0) 
-  const [Green, setGreen] = useState(0)
-  const [Yellow, setYellow ]= useState(0)
+  var [Red, setRed] = useState(0)
+  var [Blue, setBlue] = useState(0) 
+  var [Green, setGreen] = useState(0)
+  var [Yellow, setYellow ]= useState(0)
 
   return (
     <View style={styles.container}>
@@ -90,7 +90,10 @@ function Spinner({navigation}) {
           style={styles.cTflip}
         ></CupertinoButtonDanger>
         <TouchableOpacity
-          onPress={() => navigation.navigate("SpinnerResults")}
+          onPress={() => navigation.navigate("SpinnerResults", {r:Red})}
+         /*} onPress={() => navigation.navigate("SpinnerResults", {b:Blue})}
+          onPress={() => navigation.navigate("SpinnerResults", {g:Green})}
+        onPress={() => navigation.navigate("SpinnerResults", {y:Yellow})}*/
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>
