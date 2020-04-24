@@ -116,18 +116,20 @@ const styles = StyleSheet.create({
   },  
   
   spinner: {
-    left: 21,
-    width: 143,
-    height: 143,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 200,
+    height: 200,
     position: "absolute"
   },
 
   spinnerStack: {
-    width: 170,
-    height: 170,
-    marginTop: 40,
-    marginLeft: 100,
-    top: 50
+    width: 200,
+    height: 200,
+    alignItems: "center",
+    justifyContent: "center",
+    position:"absolute",
+    marginLeft: 100
   },
 
   sButton: {
