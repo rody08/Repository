@@ -65,10 +65,10 @@ function SpinnerResults({navigation}) {
       <PieChart style={styles.PieChart} data={pieData}/> 
 
       <Text style={styles.results}>
-        Red: {red}{"\n"}
-        Blue: {blue}{"\n"}
-        Green: {green}{"\n"}
-        Yellow: {yellow}
+        # 1:  {red}{"\n"}
+        #2:  {blue}{"\n"}
+        #3:  {green}{"\n"}
+        #4:  {yellow}
       </Text>
 
       {/*Play Again Button*/}
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     width: 212,
     height: 52,
     alignSelf: "center",
-    top: 650
+    top: 200
   },
 
   //Back Button Style 

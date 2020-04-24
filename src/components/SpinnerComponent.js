@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Animated, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 
-const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/Spinner.png')
+const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator1.2.0.png')
+const arrow = require('C:/Users/Administrator/Documents/Repository/src/assets/images/pointer.png')
 
 export default class SpinnerComponent extends Component{
 
@@ -14,40 +15,40 @@ export default class SpinnerComponent extends Component{
     this.animated.setValue(0)
     Animated.timing(this.animated, {
       toValue: 1,
-      duration: 1000,
+      duration: 3000,
       useNativeDriver: true,
     }).start();
   }
   
   render() {      
 
-    const spin = this.animated.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['0deg', '4320deg']});
-
-    const transform = [
-      {rotate: spin},
-      {perspective: 1000}]; 
-
     return (
       <View style={styles.container}>
+
+        <Image
+            source={require("../assets/images/SpinnerSimulator1.2.0.png")}
+            resizeMode="contain"
+            style={styles.arrow}
+        ></Image>
+
         <Animated.Image 
-            source={backgroundImage}
+            source={ arrow }
             resizeMode='cover'
             style={{
                 position: 'absolute',
-                alignItems: "center",
-                justifyContent: "center",
-                top: 100,
+                justifyContent: 'center',
+                alignItems: 'center',
+                top: 10,
                 height: 300,
                 width: 300,
                 transform: [{
                     rotate: this.animated.interpolate({
                         inputRange: [0, 1],
-                        outputRange: ['0deg', '4320deg'] })
+                        outputRange: ['0deg', '4000deg'] })
                 }]
             }}>
             </Animated.Image>         
+
         <TouchableOpacity 
             style={styles.circle}
             title="Spin" onPress={() => { this.animate() }}>
@@ -65,6 +66,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  arrow: {
+    top:0,
+    height:320,
+    alignItems: "center",
+    justifyContent: "center",
+    position: 'absolute'
+  },
+
   circle: {
     top: 100,
     width: 300,
@@ -74,6 +83,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: 'absolute'
+  },
+  img:
+  {
+      height:350,
+      top:150
+
   },
 
 });
