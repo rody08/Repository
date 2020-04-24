@@ -26,10 +26,11 @@ export default class SpinnerComponent extends Component{
     return (
       <View style={styles.container}>
 
-        <View style = {styles.arrow}>
-            <Image source={ arrow }/>
-        </View>
-
+        <Image
+        source={require("../assets/images/SpinnerSimulator.png")}
+        resizeMode="contain"
+        style={styles.img}
+            ></Image>
         <Animated.Image 
             source={ backgroundImage }
             resizeMode='cover'
@@ -47,6 +48,9 @@ export default class SpinnerComponent extends Component{
                 }]
             }}>
             </Animated.Image>         
+
+           
+
         <TouchableOpacity 
             style={styles.circle}
             title="Spin" onPress={() => { this.animate() }}>
@@ -80,6 +84,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: 'absolute'
+  },
+  img:
+  {
+      height:350,
+      top:150
+
   },
 
 });
