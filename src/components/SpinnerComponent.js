@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Animated, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 
-const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator1.2.0.png')
 const arrow = require('C:/Users/Administrator/Documents/Repository/src/assets/images/pointer.png')
 
 export default class SpinnerComponent extends Component{
