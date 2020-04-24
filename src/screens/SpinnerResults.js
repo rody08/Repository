@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     width: 212,
     height: 52,
     alignSelf: "center",
-    top: 650
+    top: 200
   },
 
   //Back Button Style 
