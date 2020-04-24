@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Animated, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 
 const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator1.2.0.png')
+const arrow = require('C:/Users/Administrator/Documents/Repository/src/assets/images/pointer.png')
+const random = require('random');
 
 export default class SpinnerComponent extends Component{
 
@@ -14,25 +16,22 @@ export default class SpinnerComponent extends Component{
     this.animated.setValue(0)
     Animated.timing(this.animated, {
       toValue: 1,
-      duration: 1000,
+      duration: 3000,
       useNativeDriver: true,
     }).start();
   }
   
   render() {      
 
-    const spin = this.animated.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['0deg', '4320deg']});
-
-    const transform = [
-      {rotate: spin},
-      {perspective: 1000}]; 
-
     return (
       <View style={styles.container}>
+
+        <View style = {styles.arrow}>
+            <Image source={ arrow }/>
+        </View>
+
         <Animated.Image 
-            source={backgroundImage}
+            source={ backgroundImage }
             resizeMode='cover'
             style={{
                 position: 'absolute',
@@ -44,7 +43,7 @@ export default class SpinnerComponent extends Component{
                 transform: [{
                     rotate: this.animated.interpolate({
                         inputRange: [0, 1],
-                        outputRange: ['0deg', '4320deg'] })
+                        outputRange: ['0deg', '4000deg'] })
                 }]
             }}>
             </Animated.Image>         
@@ -63,6 +62,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  arrow: {
+    top:100,
+    alignItems: "center",
+    justifyContent: "center",
+    position: 'absolute'
   },
 
   circle: {
