@@ -4,7 +4,9 @@ import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
 
 function SpinnerResults({navigation}) {
+
   return (
+
     <View style={styles.container}>
 
       {/*Back Butoon*/}
@@ -15,26 +17,20 @@ function SpinnerResults({navigation}) {
               style={styles.button2}
             ></TouchableOpacity>
         </View>
-     
-      
 
       {/*Play Again Button*/}
       <View style={styles.srButtonStack}>
-
         <CupertinoButtonDanger
           text1="Play Again"
           button1="Spinner"
           style={styles.srButton}
         ></CupertinoButtonDanger>
-
         <TouchableOpacity
           onPress={() => navigation.navigate("Spinner")}
           style={styles.sRonClick}
         ></TouchableOpacity>
-
       </View>
 
-      
     </View>
   );
 }
@@ -46,7 +42,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(143, 216, 255,1)"
   },
 
-  
 //Play Again Button Style
   srButton: {
     top: 0,
@@ -80,6 +75,7 @@ const styles = StyleSheet.create({
     width: 43,
     height: 47
   },
+
   icon1: {
     top: 50,
     left: 10,
@@ -89,6 +85,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40
   },
+  
   button2: {
     top: 50,
     left: 10,

@@ -4,7 +4,6 @@ import Coin from "../components/Coin";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
 
-
 export default function CoinToss({ navigation }) {
 
     var [spinCount , setCount] = useState(0); //set the number of spins to 0 
@@ -46,18 +45,15 @@ export default function CoinToss({ navigation }) {
 
       {/*Results Button*/}
       <View style={styles.cTflipStack}> 
-
         <CupertinoButtonDanger
           text1="Results"
           button1="CoinTossResults"
           style={styles.cTflip}
         ></CupertinoButtonDanger> 
-
         <TouchableOpacity 
           onPress = {() => navigation.navigate("CoinTossResults", { x:spinCount } ) }
           style={styles.fBonClick}>
         </TouchableOpacity>
-
       </View>
 
     </View>
@@ -122,6 +118,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 100
   },
+
   //back button Style
   icon1Stack: {
     width: 43,

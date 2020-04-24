@@ -1,22 +1,11 @@
 import React, { Component } from "react";
-import { Animated, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default class Coin extends Component{
+export default class SpinnerComponent extends Component{
 
   constructor() {
     super()
     this.animated = new Animated.Value(0);
-    var snapshot = 50, radius = 100;
-    var inputRange = [], outputRange = [];
-
-    for (var i=0; i<=snapshot; ++i) {
-        var value = i/snapshot;
-        var move = Math.cos(value * Math.PI * 2) * radius;
-
-        inputRange.push(value);
-        outputRange.push(move);
-    }
-    this.translateY = this.animated.interpolate({ inputRange, outputRange });
   }
 
   animate() {
@@ -35,7 +24,6 @@ export default class Coin extends Component{
       outputRange: ['0deg', '4320deg']});
 
     const transform = [
-      {translateY: this.translateY},
       {rotateX: spin},
       {perspective: 1000}]; 
 
@@ -44,7 +32,7 @@ export default class Coin extends Component{
         <Animated.View style={{ transform }}>
          <TouchableOpacity 
             style={styles.circle}
-            title="Flip" onPress={() => { this.animate() }}>
+            title="Spin" onPress={() => { this.animate() }}>
             <Text style = {styles.text}>$</Text>
          </TouchableOpacity>
         </Animated.View>
@@ -62,12 +50,9 @@ const styles = StyleSheet.create({
   },
 
   circle: {
-    width: 100,
-    height: 100,
-    borderRadius: 100/2,
-    borderWidth: 5,
-    borderColor: 'orange',
-    backgroundColor: 'gold',
+    width: 200,
+    height: 200,
+    backgroundColor: 'white',
     alignItems: "center",
     justifyContent: "center"
   },

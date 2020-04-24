@@ -1,9 +1,10 @@
 import React, { Component, useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity,Slider } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Slider, Animated } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
+import SpinnerComponent from "../components/SpinnerComponent";
 
-function Spinner({navigation}) {
+function Spinner({ navigation }) {
 
   //Declare all of the variable to hold the color size 
   const [Red, setRed] = useState(0)
@@ -13,6 +14,13 @@ function Spinner({navigation}) {
 
   return (
     <View style={styles.container}>
+      
+      {/*Spinner Attributes */}
+      <View style={styles.spinnerStack}>
+        <SpinnerComponent
+          style={styles.spinner}>
+        </SpinnerComponent>
+      </View>
       
       {/* Back button */}
       <View style={styles.icon1Stack}>
@@ -90,7 +98,7 @@ function Spinner({navigation}) {
           style={styles.cTflip}
         ></CupertinoButtonDanger>
         <TouchableOpacity
-          onPress={() => navigation.navigate("SpinnerResults")}
+          onPress={() => navigation.navigate("SpinnerResults",{Red,Yellow,Green,Blue})}
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>
@@ -219,6 +227,22 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(230, 230, 230,1)",
     position: "absolute",
     opacity: 0
+  },
+
+  spinner: {
+    top: 20,
+    left: 21,
+    width: 143,
+    height: 143,
+    position: "absolute"
+  },
+
+  spinnerStack: {
+    width: 169,
+    height: 171,
+    marginTop: 40,
+    marginLeft: 100,
+    top: 50
   },
 });
 
