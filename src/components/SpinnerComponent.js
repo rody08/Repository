@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator.png')
+const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator1.2.0.png')
 
 export default class SpinnerComponent extends Component{
 
