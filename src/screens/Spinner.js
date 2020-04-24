@@ -166,36 +166,37 @@ const styles = StyleSheet.create({
   RedsliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 400,
   },
   BluesliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 400,
   },
   GreensliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 400,
   },
   YellowsliderElements:{
     width:350,
     alignSelf:"center",
-    top : 500,
+    top : 400,
   },
 
   //slider text 
   NumberofSpins:
   {
       fontSize: 15,
-      top: - 9,
+      top: 345,
       fontFamily: "roboto-regular",
       color: "rgba(255,255,255,1)",
+      left: 20
   },
 
   //results button elements 
   cTflip: {
-    top: 390,
+    top: 290,
     left: 0,
     width: 209,
     height: 52,
@@ -212,7 +213,7 @@ const styles = StyleSheet.create({
   },
 
   fBonClick: {
-    top: 390,
+    top: 290,
     left: 2,
     width: 209,
     height: 52,
