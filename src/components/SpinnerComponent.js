@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/Spinner.png')
+const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator.png')
 
 export default class SpinnerComponent extends Component{
 
@@ -36,9 +36,9 @@ export default class SpinnerComponent extends Component{
             resizeMode='cover'
             style={{
                 position: 'absolute',
-                alignItems: "center",
-                justifyContent: "center",
-                top: 100,
+                justifyContent: 'center',
+                alignItems: 'center',
+                top: 10,
                 height: 300,
                 width: 300,
                 transform: [{
