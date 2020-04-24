@@ -1,9 +1,10 @@
 import React, { Component, useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity,Slider } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Slider, Animated } from "react-native";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
+import SpinnerComponent from "../components/SpinnerComponent";
 
-function Spinner({navigation}) {
+function Spinner({ navigation }) {
 
   //Declare all of the variable to hold the color size 
   var [Red, setRed] = useState(0)
@@ -13,6 +14,13 @@ function Spinner({navigation}) {
 
   return (
     <View style={styles.container}>
+      
+      {/*Spinner Attributes */}
+      <View style={styles.spinnerStack}>
+        <SpinnerComponent
+          style={styles.spinner}>
+        </SpinnerComponent>
+      </View>
       
       {/* Back button */}
       <View style={styles.icon1Stack}>
@@ -90,10 +98,7 @@ function Spinner({navigation}) {
           style={styles.cTflip}
         ></CupertinoButtonDanger>
         <TouchableOpacity
-          onPress={() => navigation.navigate("SpinnerResults", {r:Red})}
-         /*} onPress={() => navigation.navigate("SpinnerResults", {b:Blue})}
-          onPress={() => navigation.navigate("SpinnerResults", {g:Green})}
-        onPress={() => navigation.navigate("SpinnerResults", {y:Yellow})}*/
+          onPress={() => navigation.navigate("SpinnerResults",{Red,Yellow,Green,Blue})}
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>
@@ -108,14 +113,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(143, 216, 255,1)"
+  },  
+  
+  spinner: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: 200,
+    height: 200,
+    position: "absolute"
   },
 
-  swipeInstructions: {
-    color: "rgba(105,104,104,1)",
-    fontSize: 14,
-    fontFamily: "roboto-regular",
-    marginTop: -147,
-    marginLeft: 102
+  spinnerStack: {
+    width: 200,
+    height: 200,
+    alignItems: "center",
+    justifyContent: "center",
+    position:"absolute",
+    marginLeft: 100
   },
 
   sButton: {
@@ -224,6 +238,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 0
   },
+
+
 });
 
 export default Spinner;

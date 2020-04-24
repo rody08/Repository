@@ -1,13 +1,11 @@
-import React, { Component, useState } from "react";
-import { Animated, Button, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-//import Svg, { Ellipse } from "react-native-svg";
+import React, { Component } from "react";
+import { Animated, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 export default class Coin extends Component{
 
   constructor() {
     super()
     this.animated = new Animated.Value(0);
-    // translateY
     var snapshot = 50, radius = 100;
     var inputRange = [], outputRange = [];
 
@@ -41,12 +39,9 @@ export default class Coin extends Component{
       {rotateX: spin},
       {perspective: 1000}]; 
 
-    //const [count, setCount] = useState(0);
-    //const onPress = () => setCount(prevCount => prevCount + 1);
-
     return (
       <View style={styles.container}>
-        <Animated.View style={{transform}}>
+        <Animated.View style={{ transform }}>
          <TouchableOpacity 
             style={styles.circle}
             title="Flip" onPress={() => { this.animate() }}>
@@ -59,11 +54,13 @@ export default class Coin extends Component{
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   circle: {
     width: 100,
     height: 100,
@@ -74,9 +71,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+
   text: {
     color: 'black',
     fontSize: 40,
     fontWeight: "bold"
   }
+  
 });
