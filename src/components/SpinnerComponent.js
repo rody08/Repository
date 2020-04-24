@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Animated, StyleSheet, Text, TouchableOpacity, View,Image } from "react-native";
 
-const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/Spinner.png')
+const backgroundImage = require('/Users/elwjaramillo/Documents/GitHub/Repository/Repository-1/src/assets/images/pointer.png')
+
 
 export default class SpinnerComponent extends Component{
 
@@ -31,6 +32,12 @@ export default class SpinnerComponent extends Component{
 
     return (
       <View style={styles.container}>
+
+        <Image
+        source={require("../assets/images/SpinnerSimulator.png")}
+        resizeMode="contain"
+        style={styles.img}
+            ></Image>
         <Animated.Image 
             source={backgroundImage}
             resizeMode='cover'
@@ -48,6 +55,9 @@ export default class SpinnerComponent extends Component{
                 }]
             }}>
             </Animated.Image>         
+
+           
+
         <TouchableOpacity 
             style={styles.circle}
             title="Spin" onPress={() => { this.animate() }}>
@@ -74,6 +84,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: 'absolute'
+  },
+  img:
+  {
+      height:350,
+      top:150
+
   },
 
 });
