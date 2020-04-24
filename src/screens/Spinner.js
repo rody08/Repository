@@ -113,14 +113,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(143, 216, 255,1)"
+  },  
+  
+  spinner: {
+    left: 21,
+    width: 143,
+    height: 143,
+    position: "absolute"
   },
 
-  swipeInstructions: {
-    color: "rgba(105,104,104,1)",
-    fontSize: 14,
-    fontFamily: "roboto-regular",
-    marginTop: -147,
-    marginLeft: 102
+  spinnerStack: {
+    width: 170,
+    height: 170,
+    marginTop: 40,
+    marginLeft: 100,
+    top: 50
   },
 
   sButton: {
@@ -230,21 +237,7 @@ const styles = StyleSheet.create({
     opacity: 0
   },
 
-  spinner: {
-    top: 20,
-    left: 21,
-    width: 143,
-    height: 143,
-    position: "absolute"
-  },
 
-  spinnerStack: {
-    width: 169,
-    height: 171,
-    marginTop: 40,
-    marginLeft: 100,
-    top: 50
-  },
 });
 
 export default Spinner;
