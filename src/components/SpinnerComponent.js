@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Animated, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 
 const backgroundImage = require('C:/Users/Administrator/Documents/Repository/src/assets/images/SpinnerSimulator1.2.0.png')
-const arrow = require('C:/Users/Administrator/Documents/Repository/src/assets/images/arrow.jpeg')
+const arrow = require('C:/Users/Administrator/Documents/Repository/src/assets/images/pointer.png')
 
 export default class SpinnerComponent extends Component{
 
@@ -26,13 +26,13 @@ export default class SpinnerComponent extends Component{
       <View style={styles.container}>
 
         <Image
-            source={require("../assets/images/pointer.png")}
+            source={require("../assets/images/SpinnerSimulator1.2.0.png")}
             resizeMode="contain"
             style={styles.arrow}
         ></Image>
 
         <Animated.Image 
-            source={ backgroundImage }
+            source={ arrow }
             resizeMode='cover'
             style={{
                 position: 'absolute',
@@ -48,8 +48,6 @@ export default class SpinnerComponent extends Component{
                 }]
             }}>
             </Animated.Image>         
-
-           
 
         <TouchableOpacity 
             style={styles.circle}
@@ -69,8 +67,8 @@ const styles = StyleSheet.create({
   },
 
   arrow: {
-    top:220,
-    height:350,
+    top:0,
+    height:320,
     alignItems: "center",
     justifyContent: "center",
     position: 'absolute'
