@@ -50,7 +50,7 @@ function Spinner({ navigation }) {
           style={styles.cTflip}
         ></CupertinoButtonDanger>
         <TouchableOpacity
-          onPress={() => navigation.navigate("SpinnerResults",{Red})}
+          onPress={() => navigation.navigate("SpinnerResults",{x:Red})}
           style={styles.fBonClick}
         ></TouchableOpacity>
       </View>

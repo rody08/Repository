@@ -9,7 +9,7 @@ function SpinnerResults({navigation}) {
   const random = require('random');
 
   var temp = useState(0);
-  temp = navigation.getParam('red');
+  temp = navigation.getParam('x');
 
   var totalSpins = JSON.stringify(temp);
 
@@ -22,8 +22,7 @@ function SpinnerResults({navigation}) {
 
   for(var i = 0 ; i < totalSpins ; i++)
   {
-    rng = random.int(min = 1, max = 101);
-
+    rng = random.int(min = 0, max = 100);
     if ( rng > 75 )
       red++;
     else if ( rng > 50 && rng <= 75 )
