@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Animated, Easing, SectionList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
@@ -15,19 +14,17 @@ import LoginPage from "./src/screens/LoginPage";
 import SignUpPage from "./src/screens/SignUpPage";
 import LoginSuccess from "./src/screens/LoginSuccess";
 import CoinTossPTR from "./src/screens/CoinTossPTR";
-import Test from "./src/screens/Test"
+
 
 
 const DrawerNavigation = createDrawerNavigator({
   Home: HomeScreen,
-
   CoinToss: CoinToss,
   Spinner: Spinner,
   CoinTossResults: CoinTossResults,
   SpinnerResults: SpinnerResults,
-
   CoinTossPTR: CoinTossPTR,
-  Test:Test,
+
 });
 
 const StackNavigation = createStackNavigator(
@@ -44,7 +41,6 @@ const StackNavigation = createStackNavigator(
     CoinTossResults: CoinTossResults,
     SpinnerResults: SpinnerResults,
     CoinTossPTR: CoinTossPTR,
-    Test:Test,
     LoginSuccess:LoginSuccess
 
   },

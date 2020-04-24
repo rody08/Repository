@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Slider, FlatList} from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Slider} from "react-native";
 import Coin from "../components/Coin";
 import CupertinoButtonDanger from "../components/CupertinoButtonDanger";
 import Icon from "react-native-vector-icons/Entypo";
-
 
 export default function CoinToss({ navigation }) {
 
@@ -15,11 +14,11 @@ export default function CoinToss({ navigation }) {
 
       {/*Back Button */}
        <View style={styles.icon1Stack}>
-            <Icon name="chevron-left" style={styles.icon1}></Icon>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("IntroScreen")}
-              style={styles.button2}
-            ></TouchableOpacity> 
+          <Icon name="chevron-left" style={styles.icon1}></Icon>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("IntroScreen")}
+            style={styles.button2}
+          ></TouchableOpacity> 
       </View>
      
       {/*Coin Attributes */}
@@ -46,18 +45,15 @@ export default function CoinToss({ navigation }) {
 
       {/*Results Button*/}
       <View style={styles.cTflipStack}> 
-
         <CupertinoButtonDanger
           text1="Results"
           button1="CoinTossResults"
           style={styles.cTflip}
         ></CupertinoButtonDanger> 
-
         <TouchableOpacity 
           onPress = {() => navigation.navigate("CoinTossResults", { x:spinCount } ) }
           style={styles.fBonClick}>
         </TouchableOpacity>
-
       </View>
 
     </View>
@@ -122,7 +118,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     opacity: 100
   },
-
 
   //back button Style
   icon1Stack: {
