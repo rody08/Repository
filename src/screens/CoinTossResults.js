@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   ctrButtonStack: {
     width: 216,
     height: 52,
-    top: 400,
+    top: 200,
     marginLeft: 90
   },
 

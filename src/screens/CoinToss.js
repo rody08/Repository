@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
 //Results Button Style
   cTflip: {
-    top: 220,
+    top: 100,
     left: 0,
     width: 209,
     height: 52,
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
   
   fBonClick: {
-    top: 220,
+    top: 100,
     left: 2,
     width: 209,
     height: 52,
