@@ -23,7 +23,7 @@
     "expo-gl": "^8.1.0",
     "expo-graphics": "^1.1.0",
     "expo-three": "^5.4.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mathjs": "^6.6.4",
     "random": "^2.2.0",
     "react": "^16.13.1",
